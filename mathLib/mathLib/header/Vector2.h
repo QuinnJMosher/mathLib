@@ -1,3 +1,5 @@
+#include <cmath>
+
 #ifndef _Vector2_h_
 #define _Vector2_h_
 
@@ -9,7 +11,6 @@ public:
 
 	Vector2();//x = 0 y = 0
 	Vector2(float in_x, float in_y);
-	Vector2(Vector2 in_copy);
 
 	float DotProduct(Vector2 other);
 	static float DotProduct(Vector2 in_a, Vector2 in_b);
