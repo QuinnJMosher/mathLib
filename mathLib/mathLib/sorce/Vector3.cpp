@@ -38,25 +38,25 @@ float Vector3::Magnitude(Vector3 input) {
 }
 
 Vector3 Vector3::Normalize() {
-	float normalX = this->x / this->Magnitude;
-	float normalY = this->y / this->Magnitude;
-	float normalZ = this->z / this->Magnitude;
+	float normalX = this->x / this->Magnitude();
+	float normalY = this->y / this->Magnitude();
+	float normalZ = this->z / this->Magnitude();
 
 	return Vector3(normalX, normalY, normalZ);
 }
 
 Vector3 Vector3::Normalize(Vector3 input) {
-	float normalX = input.x / input.Magnitude;
-	float normalY = input.y / input.Magnitude;
-	float normalZ = input.z / input.Magnitude;
+	float normalX = input.x / input.Magnitude();
+	float normalY = input.y / input.Magnitude();
+	float normalZ = input.z / input.Magnitude();
 
 	return Vector3(normalX, normalY, normalZ);
 }
 
 void Vector3::NormalizeThis() {//edits the vector3 called upon instead of outputing
-	float normalX = this->x / this->Magnitude;
-	float normalY = this->y / this->Magnitude;
-	float normalZ = this->z / this->Magnitude;
+	float normalX = this->x / this->Magnitude();
+	float normalY = this->y / this->Magnitude();
+	float normalZ = this->z / this->Magnitude();
 
 	this->x = normalX;
 	this->y = normalY;

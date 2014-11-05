@@ -1,57 +1,24 @@
-﻿Build started 11/5/2014 12:17:07 PM.
+﻿Build started 11/5/2014 12:44:58 PM.
      1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\mathLib\mathLib.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt sorce\Test.cpp sorce\Vector3.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt sorce\Vector3.cpp
          Vector3.cpp
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(12): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(24): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(28): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(41): error C3867: 'Vector3::Magnitude': function call missing argument list; use '&Vector3::Magnitude' to create a pointer to member
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(41): error C2568: '/' : unable to resolve function overload
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(24): could be 'float Vector3::Magnitude(Vector3)'
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(23): or       'float Vector3::Magnitude(void)'
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(42): error C3867: 'Vector3::Magnitude': function call missing argument list; use '&Vector3::Magnitude' to create a pointer to member
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(42): error C2568: '/' : unable to resolve function overload
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(24): could be 'float Vector3::Magnitude(Vector3)'
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(23): or       'float Vector3::Magnitude(void)'
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(43): error C3867: 'Vector3::Magnitude': function call missing argument list; use '&Vector3::Magnitude' to create a pointer to member
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(43): error C2568: '/' : unable to resolve function overload
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(24): could be 'float Vector3::Magnitude(Vector3)'
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(23): or       'float Vector3::Magnitude(void)'
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(45): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(49): error C3867: 'Vector3::Magnitude': function call missing argument list; use '&Vector3::Magnitude' to create a pointer to member
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(49): error C2568: '/' : unable to resolve function overload
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(24): could be 'float Vector3::Magnitude(Vector3)'
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(23): or       'float Vector3::Magnitude(void)'
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(50): error C3867: 'Vector3::Magnitude': function call missing argument list; use '&Vector3::Magnitude' to create a pointer to member
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(50): error C2568: '/' : unable to resolve function overload
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(24): could be 'float Vector3::Magnitude(Vector3)'
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(23): or       'float Vector3::Magnitude(void)'
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(51): error C3867: 'Vector3::Magnitude': function call missing argument list; use '&Vector3::Magnitude' to create a pointer to member
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(51): error C2568: '/' : unable to resolve function overload
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(24): could be 'float Vector3::Magnitude(Vector3)'
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(23): or       'float Vector3::Magnitude(void)'
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(53): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(57): error C3867: 'Vector3::Magnitude': function call missing argument list; use '&Vector3::Magnitude' to create a pointer to member
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(57): error C2568: '/' : unable to resolve function overload
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(24): could be 'float Vector3::Magnitude(Vector3)'
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(23): or       'float Vector3::Magnitude(void)'
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(58): error C3867: 'Vector3::Magnitude': function call missing argument list; use '&Vector3::Magnitude' to create a pointer to member
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(58): error C2568: '/' : unable to resolve function overload
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(24): could be 'float Vector3::Magnitude(Vector3)'
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(23): or       'float Vector3::Magnitude(void)'
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(59): error C3867: 'Vector3::Magnitude': function call missing argument list; use '&Vector3::Magnitude' to create a pointer to member
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(59): error C2568: '/' : unable to resolve function overload
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(24): could be 'float Vector3::Magnitude(Vector3)'
-                 c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.h(23): or       'float Vector3::Magnitude(void)'
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(67): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(71): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(75): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(79): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-         Test.cpp
-         Generating Code...
-     1>Done Building Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\mathLib\mathLib.vcxproj" (Build target(s)) -- FAILED.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\Debug\mathLib.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\Debug\mathLib.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\Debug\mathLib.lib" /MACHINE:X86 Debug\Vector2.obj
+         Debug\Test.obj
+         Debug\Vector3.obj
+         mathLib.vcxproj -> C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\Debug\mathLib.exe
+     1>Done Building Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\mathLib\mathLib.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.58
+Time Elapsed 00:00:00.68
