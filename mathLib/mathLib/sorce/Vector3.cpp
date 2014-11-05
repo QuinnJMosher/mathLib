@@ -28,22 +28,82 @@ Vector3 Vector3::CrossProduct(Vector3 in_a, Vector3 in_b) {
 	return Vector3((in_a.y * in_b.z) - (in_a.z * in_b.y), (in_a.z * in_b.x) - (in_a.x * in_b.z), (in_a.x * in_b.y) - (in_a.y * in_b.x));
 }
 
-float Vector3::Magnitude();
-float Vector3::Magnitude(Vector3 input);
+float Vector3::Magnitude() {
+	return sqrt(pow(this->x, 2) + pow(this->y, 2) + pow(this->z, 2));
+}
 
-Vector3 Vector3::Normalize();
-Vector3 Vector3::Normalize(Vector3 input);
+float Vector3::Magnitude(Vector3 input) {
+	return sqrt(pow(input.x, 2) + pow(input.y, 2) + pow(input.z, 2));
 
-void Vector3::NormalizeThis();//edits the vector3 called upon instead of outputing
+}
 
-Vector3 Vector3::operator+(Vector3 other);
-Vector3 Vector3::operator-(Vector3 other);
-Vector3 Vector3::operator*(Vector3 other);
-Vector3 Vector3::operator*(float input);
+Vector3 Vector3::Normalize() {
+	float normalX = this->x / this->Magnitude;
+	float normalY = this->y / this->Magnitude;
+	float normalZ = this->z / this->Magnitude;
 
-void Vector3::operator+= (Vector3 other);
-void Vector3::operator-=(Vector3 other);
-void Vector3::operator*=(Vector3 other);
-void Vector3::operator*=(float input);
+	return Vector3(normalX, normalY, normalZ);
+}
 
-std::ostream& operator<<(std::ostream& os, const Vector3& vec);
+Vector3 Vector3::Normalize(Vector3 input) {
+	float normalX = input.x / input.Magnitude;
+	float normalY = input.y / input.Magnitude;
+	float normalZ = input.z / input.Magnitude;
+
+	return Vector3(normalX, normalY, normalZ);
+}
+
+void Vector3::NormalizeThis() {//edits the vector3 called upon instead of outputing
+	float normalX = this->x / this->Magnitude;
+	float normalY = this->y / this->Magnitude;
+	float normalZ = this->z / this->Magnitude;
+
+	this->x = normalX;
+	this->y = normalY;
+	this->z = normalZ;
+}
+
+Vector3 Vector3::operator+(Vector3 other) {
+	return Vector3(this->x + other.x, this->y + other.y, this->z + other.z);
+}
+
+Vector3 Vector3::operator-(Vector3 other) {
+	return Vector3(this->x - other.x, this->y - other.y, this->z - other.z);
+}
+
+Vector3 Vector3::operator*(Vector3 other){
+	return Vector3(this->x * other.x, this->y * other.y, this->z * other.z);
+}
+
+Vector3 Vector3::operator*(float input) {
+	return Vector3(this->x * input, this->y * input, this->z * input);
+}
+
+void Vector3::operator+= (Vector3 other) {
+	this->x += other.x;
+	this->y += other.y;
+	this->z += other.z;
+}
+
+void Vector3::operator-=(Vector3 other) {
+	this->x -= other.x;
+	this->y -= other.y;
+	this->z -= other.z;
+}
+
+void Vector3::operator*=(Vector3 other) {
+	this->x *= other.x;
+	this->y *= other.y;
+	this->z *= other.z;
+}
+
+void Vector3::operator*=(float input) {
+	this->x *= input;
+	this->y *= input;
+	this->z *= input;
+}
+
+std::ostream& operator<<(std::ostream& os, const Vector3& vec) {
+	os << "(" << vec.x << ", " << vec.y << ", " << vec.z << ")";
+	return os;
+}

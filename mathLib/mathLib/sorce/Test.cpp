@@ -1,13 +1,9 @@
-#include "Vector2.h"
+#include "Vector3.h"
 
 using namespace std;
 
 void main() {
-	Vector2 vec1 = Vector2(1, 2);
-	Vector2 vec2 = vec1.Normalize();
-	vec1.NormalizeThis();
-
-	cout << vec2 << endl;
+	Vector3 vec1 = Vector3(1, 2, 3);
 	cout << vec1 << endl;
 	system("pause");
 }
