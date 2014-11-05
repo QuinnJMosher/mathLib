@@ -65,10 +65,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="sorce\Vector2.cpp" />
-    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="sorce\Test.cpp" />
+    <ClCompile Include="sorce\Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sorce\Vector2.h" />
+    <ClInclude Include="sorce\Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

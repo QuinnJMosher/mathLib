@@ -42,9 +42,11 @@ Vector2 Vector2::Normalize(Vector2 input) {
 }
 
 void Vector2::NormalizeThis() {//edits the vector2 called upon instead of outputing
-	this->x = this->x / this->Magnitude();
-	this->y = this->y / this->Magnitude();
+	float newX = this->x / this->Magnitude();
+	float newY = this->y / this->Magnitude();
 
+	this->x = newX;
+	this->y = newY;
 }
 
 Vector2 Vector2::operator+(Vector2 other) {
@@ -81,4 +83,9 @@ void Vector2::operator*=(Vector2 other) {
 void Vector2::operator*=(float input) {
 	this->x *= input;
 	this->y *= input;
+}
+
+std::ostream& operator<<(std::ostream& os, const Vector2& vec) {
+	os << "(" << vec.x << ", " << vec.y << ")";
+	return os;
 }

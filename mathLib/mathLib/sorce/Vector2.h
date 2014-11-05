@@ -1,7 +1,8 @@
-#include <cmath>
-
 #ifndef _Vector2_h_
 #define _Vector2_h_
+
+#include <cmath>
+#include <iostream>
 
 class Vector2 {
 
@@ -33,6 +34,11 @@ public:
 	void operator*=(Vector2 other);
 	void operator*=(float input);
 
+	//overloads << operator
+	friend std::ostream& operator<<(std::ostream& os, const Vector2& vec);
+
 };
+
+
 
 #endif
