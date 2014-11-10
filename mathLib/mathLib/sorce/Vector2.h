@@ -16,6 +16,9 @@ public:
 	float DotProduct(Vector2 other);
 	static float DotProduct(Vector2 in_a, Vector2 in_b);
 
+	Vector2 CrossProduct(Vector2 other);
+	static Vector2 CrossProduct(Vector2 in_a, Vector2 in_b);
+
 	float Magnitude();
 	static float Magnitude(Vector2 input);
 

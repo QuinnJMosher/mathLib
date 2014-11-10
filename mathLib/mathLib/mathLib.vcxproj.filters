@@ -32,5 +32,8 @@
     <ClInclude Include="sorce\Vector3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sorce\Matrix3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

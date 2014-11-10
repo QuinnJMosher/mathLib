@@ -69,6 +69,7 @@
     <ClCompile Include="sorce\Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="sorce\Matrix3.h" />
     <ClInclude Include="sorce\Vector2.h" />
     <ClInclude Include="sorce\Vector3.h" />
   </ItemGroup>

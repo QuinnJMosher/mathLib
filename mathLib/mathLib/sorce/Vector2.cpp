@@ -18,6 +18,14 @@ float Vector2::DotProduct(Vector2 in_a, Vector2 in_b) {
 	return ((in_a.x * in_b.x) + (in_a.y * in_b.y));
 }
 
+Vector2 Vector2::CrossProduct(Vector2 other) {
+	return Vector2(other.y, (other.x * -1));
+}
+
+Vector2 Vector2::CrossProduct(Vector2 in_a, Vector2 in_b) {
+	return Vector2(in_b.y, (in_b.x * -1));
+}
+
 float Vector2::Magnitude() {
 	return std::sqrt(pow(this->x, 2) + pow(this->y, 2));
 }

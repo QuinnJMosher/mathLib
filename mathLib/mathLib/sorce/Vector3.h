@@ -12,7 +12,7 @@ public:
 	float z;
 
 	Vector3();//x = 0 y = 0 z = 0
-	Vector3(float in_x, float in_y, int in_z);
+	Vector3(float in_x, float in_y, float in_z);
 
 	float DotProduct(Vector3 other);
 	static float DotProduct(Vector3 in_a, Vector3 in_b);
