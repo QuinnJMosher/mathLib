@@ -1,17 +1,10 @@
-﻿Build started 11/5/2014 12:44:58 PM.
+﻿Build started 11/10/2014 9:41:31 AM.
      1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\mathLib\mathLib.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt sorce\Vector3.cpp
-         Vector3.cpp
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(12): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(24): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(28): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(45): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(53): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(67): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(71): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(75): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib\mathlib\sorce\vector3.cpp(79): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt sorce\Test.cpp sorce\Vector2.cpp
+         Vector2.cpp
+         Test.cpp
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\Debug\mathLib.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\Debug\mathLib.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\Debug\mathLib.lib" /MACHINE:X86 Debug\Vector2.obj
          Debug\Test.obj
@@ -21,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.68
+Time Elapsed 00:00:01.23

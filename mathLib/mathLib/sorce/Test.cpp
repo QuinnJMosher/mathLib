@@ -1,11 +1,12 @@
-#include "Vector3.h"
+#include "Vector2.h"
 
 using namespace std;
 
 void main() {
-	Vector3 vec1 = Vector3(1, 2, 3);
-	Vector3 vec2 = Vector3(4, 5, 6);
-	
+	Vector2 vec1 = Vector2(1, 2);
+	Vector2 vec2 = Vector2(3, 4);
+	cout << vec1.CrossProduct(vec2) << endl;
+	cout << Vector2::CrossProduct(vec1, vec2) << endl;
 	cout << vec1 << endl;
 	system("pause");
 }

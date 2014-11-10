@@ -6,7 +6,7 @@ Vector3::Vector3() {
 	this->z = 0;
 }
 
-Vector3::Vector3(float in_x, float in_y, int in_z) {
+Vector3::Vector3(float in_x, float in_y, float in_z) {
 	this->x = in_x;
 	this->y = in_y;
 	this->z = in_z;
