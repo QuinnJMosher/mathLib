@@ -40,8 +40,8 @@ Matrix3 Matrix3::Scale(float in_xScale, float in_yScale) {
 Matrix3 Matrix3::TransformVector(float in_xTransform, float in_yTransform) {
 	this->reset();
 
-	matrix[2][0] = in_xTransform;
-	matrix[2][1] = in_yTransform;
+	matrix[0][2] = in_xTransform;
+	matrix[1][2] = in_yTransform;
 
 	return *this;
 }
@@ -157,8 +157,8 @@ Vector2 Matrix3::operator*(Vector2 other) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Matrix3& mx3) {
-	os << "[[" << mx3.matrix[0][0] << ", " << mx3.matrix[0][1] << "," << mx3.matrix[0][1] << "]\n";
-	os << " [" << mx3.matrix[1][0] << ", " << mx3.matrix[1][1] << "," << mx3.matrix[1][1] << "]\n";
-	os << " [" << mx3.matrix[2][0] << ", " << mx3.matrix[2][1] << "," << mx3.matrix[2][1] << "]]\n";
+	os << "[[" << mx3.matrix[0][0] << ", " << mx3.matrix[0][1] << ", " << mx3.matrix[0][2] << "]\n";
+	os << " [" << mx3.matrix[1][0] << ", " << mx3.matrix[1][1] << ", " << mx3.matrix[1][2] << "]\n";
+	os << " [" << mx3.matrix[2][0] << ", " << mx3.matrix[2][1] << ", " << mx3.matrix[2][2] << "]]\n";
 	return os;
 }
