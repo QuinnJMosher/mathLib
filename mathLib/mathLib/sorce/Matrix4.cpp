@@ -20,7 +20,7 @@ void Matrix4::reset() {
 }
 
 Matrix4 Matrix4::XRotation(float in_degrees) {
-	this->reset;
+	this->reset();
 
 	matrix[1][1] = std::cos(-in_degrees);
 	matrix[1][2] = -std::sin(-in_degrees);
@@ -31,7 +31,7 @@ Matrix4 Matrix4::XRotation(float in_degrees) {
 }
 
 Matrix4 Matrix4::YRotation(float in_degrees) {
-	this->reset;
+	this->reset();
 
 	matrix[0][0] = std::cos(-in_degrees);
 	matrix[0][2] = std::sin(-in_degrees);
@@ -42,7 +42,7 @@ Matrix4 Matrix4::YRotation(float in_degrees) {
 }
 
 Matrix4 Matrix4::ZRotation(float in_degrees) {
-	this->reset;
+	this->reset();
 
 	matrix[0][0] = std::cos(-in_degrees);
 	matrix[0][1] = -std::sin(-in_degrees);
@@ -162,8 +162,8 @@ Matrix4 Matrix4::operator*(Matrix4 other) {
 Matrix4 Matrix4::operator*=(Matrix4 other) {
 	Matrix4 temp = Matrix4();
 
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
 			temp.matrix[i][j] = matrix[i][j];
 		}
 	}
