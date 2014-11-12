@@ -65,6 +65,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="sorce\Matrix3.cpp" />
+    <ClCompile Include="sorce\Matrix4.cpp" />
     <ClCompile Include="sorce\Vector2.cpp" />
     <ClCompile Include="sorce\Test.cpp" />
     <ClCompile Include="sorce\Vector3.cpp" />
