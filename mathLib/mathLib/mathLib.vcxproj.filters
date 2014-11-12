@@ -38,5 +38,8 @@
     <ClInclude Include="sorce\Matrix3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sorce\Matrix4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

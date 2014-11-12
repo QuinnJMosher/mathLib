@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sorce\Matrix3.h" />
+    <ClInclude Include="sorce\Matrix4.h" />
     <ClInclude Include="sorce\Vector2.h" />
     <ClInclude Include="sorce\Vector3.h" />
   </ItemGroup>
