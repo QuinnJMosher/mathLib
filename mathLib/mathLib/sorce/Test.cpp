@@ -1,10 +1,9 @@
-#include "Vector4.h"
+#include "General.h"
+#include <iostream>
 
 using namespace std;
 
 void main() {
-	Vector4 vec1 = Vector4(); 
-	vec1 = Vector4::ConstructFromColor(0xa1b2c3d4);
-	cout << vec1 << endl;
+	cout << General::ShiftPowOfTwo(6) << endl;
 	system("pause");
 }
