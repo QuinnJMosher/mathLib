@@ -64,6 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="sorce\General.cpp" />
     <ClCompile Include="sorce\Matrix3.cpp" />
     <ClCompile Include="sorce\Matrix4.cpp" />
     <ClCompile Include="sorce\Vector2.cpp" />
@@ -72,7 +73,7 @@
     <ClCompile Include="sorce\Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sorce\Genral.h" />
+    <ClInclude Include="sorce\General.h" />
     <ClInclude Include="sorce\Matrix3.h" />
     <ClInclude Include="sorce\Matrix4.h" />
     <ClInclude Include="sorce\Vector2.h" />
