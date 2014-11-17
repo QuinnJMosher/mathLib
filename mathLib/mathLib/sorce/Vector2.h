@@ -1,7 +1,8 @@
-#include <cmath>
-
 #ifndef _Vector2_h_
 #define _Vector2_h_
+
+#include <cmath>
+#include <iostream>
 
 class Vector2 {
 
@@ -14,6 +15,9 @@ public:
 
 	float DotProduct(Vector2 other);
 	static float DotProduct(Vector2 in_a, Vector2 in_b);
+
+	Vector2 CrossProduct(Vector2 other);
+	static Vector2 CrossProduct(Vector2 in_a, Vector2 in_b);
 
 	float Magnitude();
 	static float Magnitude(Vector2 input);
@@ -33,6 +37,11 @@ public:
 	void operator*=(Vector2 other);
 	void operator*=(float input);
 
+	//overloads << operator
+	friend std::ostream& operator<<(std::ostream& os, const Vector2& vec);
+
 };
+
+
 
 #endif

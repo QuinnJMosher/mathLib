@@ -18,6 +18,14 @@ float Vector2::DotProduct(Vector2 in_a, Vector2 in_b) {
 	return ((in_a.x * in_b.x) + (in_a.y * in_b.y));
 }
 
+Vector2 Vector2::CrossProduct(Vector2 other) {
+	return Vector2(other.y, (other.x * -1));
+}
+
+Vector2 Vector2::CrossProduct(Vector2 in_a, Vector2 in_b) {
+	return Vector2(in_b.y, (in_b.x * -1));
+}
+
 float Vector2::Magnitude() {
 	return std::sqrt(pow(this->x, 2) + pow(this->y, 2));
 }
@@ -42,9 +50,11 @@ Vector2 Vector2::Normalize(Vector2 input) {
 }
 
 void Vector2::NormalizeThis() {//edits the vector2 called upon instead of outputing
-	this->x = this->x / this->Magnitude();
-	this->y = this->y / this->Magnitude();
+	float newX = this->x / this->Magnitude();
+	float newY = this->y / this->Magnitude();
 
+	this->x = newX;
+	this->y = newY;
 }
 
 Vector2 Vector2::operator+(Vector2 other) {
@@ -81,4 +91,9 @@ void Vector2::operator*=(Vector2 other) {
 void Vector2::operator*=(float input) {
 	this->x *= input;
 	this->y *= input;
+}
+
+std::ostream& operator<<(std::ostream& os, const Vector2& vec) {
+	os << "(" << vec.x << ", " << vec.y << ")";
+	return os;
 }
