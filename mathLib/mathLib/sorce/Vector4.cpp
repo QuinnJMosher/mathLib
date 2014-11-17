@@ -16,17 +16,17 @@ Vector4::Vector4(float in_w, float in_x, float in_y, float in_z) {
 
 Vector4::~Vector4() { }
 
-Vector4 Vector4::ConstructFromColor(float in_perA, float in_perR, float in_perG, float in_perB) {
-	return Vector4(in_perA, in_perR, in_perG, in_perB);
+Vector4 Vector4::ConstructFromColor(float in_Alpha, float in_Red, float in_Green, float in_Blue) {
+	return Vector4(in_Alpha / 255, in_Red / 255, in_Green / 255, in_Blue / 255);
 }
 
 Vector4 Vector4::ConstructFromColor(unsigned int in_hexColor) {
 	Vector4 out = Vector4();
 
-	out.w = ((in_hexColor >> 24) & 0xff);
-	out.x = ((in_hexColor >> 16) & 0xff);
-	out.y = ((in_hexColor >> 8) & 0xff);
-	out.z = ((in_hexColor) & 0xff);
+	out.w = ((in_hexColor >> 24) & 0xff) / 255.0f;
+	out.x = ((in_hexColor >> 16) & 0xff) / 255.0f;
+	out.y = ((in_hexColor >> 8) & 0xff) / 255.0f;
+	out.z = ((in_hexColor) & 0xff) / 255.0f;
 
 	return out;
 

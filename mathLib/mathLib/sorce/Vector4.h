@@ -15,8 +15,8 @@ public:
 	Vector4(float in_x, float in_y, float in_z, float in_w);
 	~Vector4();
 
-	Vector4 ConstructFromColor(float in_perA, float in_perR, float in_perG, float in_perB);
-	Vector4 ConstructFromColor(unsigned int in_hexColor);
+	static Vector4 ConstructFromColor(float in_Alpha, float in_Red, float in_Green, float in_Blue);
+	static Vector4 ConstructFromColor(unsigned int in_hexColor);
 
 	float Magnitude();
 	static float Magnitude(Vector4 input);
