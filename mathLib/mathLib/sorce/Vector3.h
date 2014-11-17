@@ -28,6 +28,9 @@ public:
 
 	void NormalizeThis();//edits the vector3 called upon instead of outputing
 
+	Vector3 Lerp(Vector3 other, float in_percent);
+	static Vector3 Lerp(Vector3 in_first, Vector3 in_second, float in_percent);
+
 	Vector3 operator+(Vector3 other);
 	Vector3 operator-(Vector3 other);
 	Vector3 operator*(Vector3 other);

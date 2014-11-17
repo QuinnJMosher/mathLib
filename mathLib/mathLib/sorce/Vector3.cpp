@@ -63,6 +63,38 @@ void Vector3::NormalizeThis() {//edits the vector3 called upon instead of output
 	this->z = normalZ;
 }
 
+Vector3 Vector3::Lerp(Vector3 other, float in_percent) {
+	float outX = other.x - x;
+	outX *= in_percent;
+	outX += x;
+
+	float outY = other.y - y;
+	outY *= in_percent;
+	outY += y;
+
+	float outZ = other.z - z;
+	outZ *= in_percent;
+	outZ += z;
+
+	return Vector3(outX, outY, outZ);
+}
+
+Vector3 Vector3::Lerp(Vector3 in_first, Vector3 in_second, float in_percent) {
+	float outX = in_second.x - in_first.x;
+	outX *= in_percent;
+	outX += in_first.x;
+
+	float outY = in_second.y - in_first.y;
+	outY *= in_percent;
+	outY += in_first.y;
+
+	float outZ = in_second.z - in_first.z;
+	outZ *= in_percent;
+	outZ += in_first.z;
+
+	return Vector3(outX, outY, outZ);
+}
+
 Vector3 Vector3::operator+(Vector3 other) {
 	return Vector3(this->x + other.x, this->y + other.y, this->z + other.z);
 }
