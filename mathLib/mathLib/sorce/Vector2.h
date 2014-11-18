@@ -40,6 +40,9 @@ public:
 	void operator*=(Vector2 other);
 	void operator*=(float input);
 
+	bool operator==(Vector2 other);
+	bool operator!=(Vector2 other);
+
 	//overloads << operator
 	friend std::ostream& operator<<(std::ostream& os, const Vector2& vec);
 

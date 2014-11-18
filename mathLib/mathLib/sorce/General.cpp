@@ -1,12 +1,16 @@
 #include "General.h"
 
 float General::Lerp(float in_begin, float in_end, float in_percent) {
-	float out = in_end - in_begin;
 
-	out *= in_percent;
-	out += in_begin;
+	if (in_begin <= in_end && in_percent >= 0 && in_percent <= 1) {
+		float out = in_end - in_begin;
 
-	return out;
+		out *= in_percent;
+		out += in_begin;
+
+		return out;
+	}
+	return -1;
 }
 
 float General::ToDegrees(float in_radians) {
@@ -17,18 +21,24 @@ float General::ToRadians(float in_Degrees) {
 }
 
 float General::ShiftPowOfTwo(float in_scalar) {
-	int highPower = 0;
-	while (pow(2, highPower) < in_scalar) {
-		highPower++;
-	}
-
-	int highPowerDist = pow(2, highPower) - in_scalar;
-	int lowPowerDist = in_scalar - pow(2, highPower - 1);
-
-	if (highPowerDist < lowPowerDist) {
-		return pow(2, highPower);
+	if (in_scalar == 1) {
+		return 2;
+	} else if (in_scalar <= 0) {
+		return -1;
 	} else {
-		return pow(2, highPower - 1);
+		int highPower = 0;
+		while (pow(2, highPower) < in_scalar) {
+			highPower++;
+		}
+
+		int highPowerDist = pow(2, highPower) - in_scalar;
+		int lowPowerDist = in_scalar - pow(2, highPower - 1);
+
+		if (highPowerDist < lowPowerDist) {
+			return pow(2, highPower);
+		} else {
+			return pow(2, highPower - 1);
+		}
 	}
 
 }
