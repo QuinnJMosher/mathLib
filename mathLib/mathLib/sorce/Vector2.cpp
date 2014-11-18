@@ -35,26 +35,40 @@ float Vector2::Magnitude(Vector2 input) {
 }
 
 Vector2 Vector2::Normalize() {
-	float normalX = this->x / this->Magnitude();
-	float normalY = this->y / this->Magnitude();
+	if (this->Magnitude() != 0) {
+		float normalX = this->x / this->Magnitude();
+		float normalY = this->y / this->Magnitude();
 
-	return Vector2(normalX, normalY);
+		return Vector2(normalX, normalY);
+	}
+
+	return Vector2();
 
 }
 
 Vector2 Vector2::Normalize(Vector2 input) {
-	float normalX = input.x / input.Magnitude();
-	float normalY = input.y / input.Magnitude();
+	if (input.Magnitude() != 0) {
+		float normalX = input.x / input.Magnitude();
+		float normalY = input.y / input.Magnitude();
 
-	return Vector2(normalX, normalY);
+		return Vector2(normalX, normalY);
+	}
+	return Vector2();
 }
 
 void Vector2::NormalizeThis() {//edits the vector2 called upon instead of outputing
-	float newX = this->x / this->Magnitude();
-	float newY = this->y / this->Magnitude();
+	if (this->Magnitude() != 0) {
+		float newX = this->x / this->Magnitude();
+		float newY = this->y / this->Magnitude();
 
-	this->x = newX;
-	this->y = newY;
+		this->x = newX;
+		this->y = newY;
+		return;
+	}
+
+	this->x = 0;
+	this->y = 0;
+	
 }
 
 Vector2 Vector2::Lerp(Vector2 other, float in_percent) {

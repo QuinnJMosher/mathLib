@@ -38,29 +38,41 @@ float Vector3::Magnitude(Vector3 input) {
 }
 
 Vector3 Vector3::Normalize() {
-	float normalX = this->x / this->Magnitude();
-	float normalY = this->y / this->Magnitude();
-	float normalZ = this->z / this->Magnitude();
-
-	return Vector3(normalX, normalY, normalZ);
+	if (this->Magnitude() != 0) {
+		float normalX = this->x / this->Magnitude();
+		float normalY = this->y / this->Magnitude();
+		float normalZ = this->z / this->Magnitude();
+	
+		return Vector3(normalX, normalY, normalZ);
+	}
+	return Vector3();
 }
 
 Vector3 Vector3::Normalize(Vector3 input) {
-	float normalX = input.x / input.Magnitude();
-	float normalY = input.y / input.Magnitude();
-	float normalZ = input.z / input.Magnitude();
+	if (input.Magnitude() != 0) {
+		float normalX = input.x / input.Magnitude();
+		float normalY = input.y / input.Magnitude();
+		float normalZ = input.z / input.Magnitude();
 
-	return Vector3(normalX, normalY, normalZ);
+		return Vector3(normalX, normalY, normalZ);
+	}
+	return Vector3();
 }
 
 void Vector3::NormalizeThis() {//edits the vector3 called upon instead of outputing
-	float normalX = this->x / this->Magnitude();
-	float normalY = this->y / this->Magnitude();
-	float normalZ = this->z / this->Magnitude();
+	if (this->Magnitude() != 0) {
+		float normalX = this->x / this->Magnitude();
+		float normalY = this->y / this->Magnitude();
+		float normalZ = this->z / this->Magnitude();
 
-	this->x = normalX;
-	this->y = normalY;
-	this->z = normalZ;
+		this->x = normalX;
+		this->y = normalY;
+		this->z = normalZ;
+		return;
+	}
+	this->x = 0;
+	this->y = 0;
+	this->z = 0;
 }
 
 Vector3 Vector3::Lerp(Vector3 other, float in_percent) {
