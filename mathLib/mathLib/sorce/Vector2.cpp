@@ -57,6 +57,30 @@ void Vector2::NormalizeThis() {//edits the vector2 called upon instead of output
 	this->y = newY;
 }
 
+Vector2 Vector2::Lerp(Vector2 other, float in_percent) {
+	float outX = other.x - x;
+	outX *= in_percent;
+	outX += x;
+
+	float outY = other.y - y;
+	outY *= in_percent;
+	outY += y;
+
+	return Vector2(outX, outY);
+}
+
+Vector2 Vector2::Lerp(Vector2 in_first, Vector2 in_second, float in_percent) {
+	float outX = in_second.x - in_first.x;
+	outX *= in_percent;
+	outX += in_first.x;
+
+	float outY = in_second.y - in_first.y;
+	outY *= in_percent;
+	outY += in_first.y;
+
+	return Vector2(outX, outY);
+}
+
 Vector2 Vector2::operator+(Vector2 other) {
 	return Vector2(this->x + other.x, this->y + other.y);
 }
