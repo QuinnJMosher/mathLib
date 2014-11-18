@@ -18,9 +18,6 @@
     <ClCompile Include="sorce\Vector2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sorce\Test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="sorce\Vector3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sorce\General.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sorce\QuinnMathLibAll.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
