@@ -1,13 +1,16 @@
-#include "Vector3.h"
+#include "Matrix4.h"
 #include <iostream>
 
 using namespace std;
 
 void main() {
-	Vector3 vec1 = Vector3(20, 20, 20);
-	Vector3 vec2 = Vector3(10, 10, 10);
-	Vector3 vec3 = vec1.Lerp(vec2, .5);
+	Matrix4 mx1 = Matrix4();
+	mx1.OrthoProj(1, 2, 3, 4, 5, 6);
 
-	cout << vec3<< endl;
+	Matrix4 mx2 = Matrix4();
+	Matrix4::OrthoProj(1, 2, 3, 4, 5, 6, &mx2);
+
+	cout << mx1 << endl;
+	cout << mx2 << endl;
 	system("pause");
 }

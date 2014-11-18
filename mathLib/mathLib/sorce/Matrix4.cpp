@@ -90,6 +90,56 @@ Matrix4 Matrix4::Transpose() {
 	return *this;
 }
 
+Matrix4 Matrix4::OrthoProj(float in_top, float in_bottom, float in_right, float in_left, float in_far, float in_near) {
+
+	matrix[0][0] = 2 / (in_right - in_left);
+	matrix[0][1] = 0;
+	matrix[0][2] = 0;
+	matrix[0][3] = -1 * ((in_right + in_left) / (in_right - in_left));
+
+	matrix[1][0] = 0;
+	matrix[1][1] = 2 / (in_top - in_bottom);
+	matrix[1][2] = 0;
+	matrix[1][3] = -1 * ((in_top + in_bottom) / (in_top - in_bottom));
+
+	matrix[2][0] = 0;
+	matrix[2][1] = 0;
+	matrix[2][2] = -2 / (in_far - in_near);
+	matrix[2][3] = ((in_far + in_near) / (in_far - in_near));
+
+	matrix[3][0] = 0;
+	matrix[3][1] = 0;
+	matrix[3][2] = 0;
+	matrix[3][3] = 1;
+
+	return (*this);
+}
+
+Matrix4 Matrix4::OrthoProj(float in_top, float in_bottom, float in_right, float in_left, float in_far, float in_near, Matrix4* target) {
+	
+	(*target).matrix[0][0] = 2 / (in_right - in_left);
+	(*target).matrix[0][1] = 0;
+	(*target).matrix[0][2] = 0;
+	(*target).matrix[0][3] = -1 * ((in_right + in_left) / (in_right - in_left));
+
+	(*target).matrix[1][0] = 0;
+	(*target).matrix[1][1] = 2 / (in_top - in_bottom);
+	(*target).matrix[1][2] = 0;
+	(*target).matrix[1][3] = -1 * ((in_top + in_bottom) / (in_top - in_bottom));
+
+	(*target).matrix[2][0] = 0;
+	(*target).matrix[2][1] = 0;
+	(*target).matrix[2][2] = -2 / (in_far - in_near);
+	(*target).matrix[2][3] = ((in_far + in_near) / (in_far - in_near));
+
+	(*target).matrix[3][0] = 0;
+	(*target).matrix[3][1] = 0;
+	(*target).matrix[3][2] = 0;
+	(*target).matrix[3][3] = 1;
+
+	return (*target);
+}
+
 Matrix4 Matrix4::operator+(Matrix4 other) {
 	Matrix4 temp = Matrix4();
 

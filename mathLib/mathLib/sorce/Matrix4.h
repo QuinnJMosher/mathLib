@@ -17,6 +17,9 @@ public:
 	Matrix4 TransformVector(float in_xTransform, float in_yTransform, float in_zTransform);
 	Matrix4 Transpose();
 
+	Matrix4 OrthoProj(float in_top, float in_bottom, float in_right, float in_left, float in_far, float in_near);
+	static Matrix4 OrthoProj(float in_top, float in_bottom, float in_right, float in_left, float in_far, float in_near, Matrix4* target);
+
 	Matrix4 operator+(Matrix4 other);
 	Matrix4 operator-(Matrix4 other);
 	Matrix4 operator+=(Matrix4 other);
