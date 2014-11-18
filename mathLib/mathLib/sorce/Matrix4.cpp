@@ -186,25 +186,14 @@ Matrix4 Matrix4::operator-=(Matrix4 other) {
 Matrix4 Matrix4::operator*(Matrix4 other) {
 	Matrix4 temp = Matrix4();
 
-	temp.matrix[0][0] = (matrix[0][0] * other.matrix[0][0]) + (matrix[0][1] * other.matrix[1][0]) + (matrix[0][2] * other.matrix[2][0]) + (matrix[0][3] * other.matrix[3][0]);
-	temp.matrix[0][1] = (matrix[0][0] * other.matrix[0][1]) + (matrix[0][1] * other.matrix[1][1]) + (matrix[0][2] * other.matrix[2][1]) + (matrix[0][3] * other.matrix[3][1]);
-	temp.matrix[0][2] = (matrix[0][0] * other.matrix[0][2]) + (matrix[0][1] * other.matrix[1][2]) + (matrix[0][2] * other.matrix[2][2]) + (matrix[0][3] * other.matrix[3][2]);
-	temp.matrix[0][3] = (matrix[0][0] * other.matrix[0][3]) + (matrix[0][1] * other.matrix[1][3]) + (matrix[0][2] * other.matrix[2][3]) + (matrix[0][3] * other.matrix[3][3]);
-
-	temp.matrix[1][0] = (matrix[1][0] * other.matrix[0][0]) + (matrix[1][1] * other.matrix[1][0]) + (matrix[1][2] * other.matrix[2][0]) + (matrix[1][3] * other.matrix[3][0]);
-	temp.matrix[1][1] = (matrix[1][0] * other.matrix[0][1]) + (matrix[1][1] * other.matrix[1][1]) + (matrix[1][2] * other.matrix[2][1]) + (matrix[1][3] * other.matrix[3][1]);
-	temp.matrix[1][2] = (matrix[1][0] * other.matrix[0][2]) + (matrix[1][1] * other.matrix[1][2]) + (matrix[1][2] * other.matrix[2][2]) + (matrix[1][3] * other.matrix[3][2]);
-	temp.matrix[1][3] = (matrix[1][0] * other.matrix[0][3]) + (matrix[1][1] * other.matrix[1][3]) + (matrix[1][2] * other.matrix[2][3]) + (matrix[1][3] * other.matrix[3][3]);
-
-	temp.matrix[2][0] = (matrix[2][0] * other.matrix[0][0]) + (matrix[2][1] * other.matrix[1][0]) + (matrix[2][2] * other.matrix[2][0]) + (matrix[2][3] * other.matrix[3][0]);
-	temp.matrix[2][1] = (matrix[2][0] * other.matrix[0][1]) + (matrix[2][1] * other.matrix[1][1]) + (matrix[2][2] * other.matrix[2][1]) + (matrix[2][3] * other.matrix[3][1]);
-	temp.matrix[2][2] = (matrix[2][0] * other.matrix[0][2]) + (matrix[2][1] * other.matrix[1][2]) + (matrix[2][2] * other.matrix[2][2]) + (matrix[2][3] * other.matrix[3][2]);
-	temp.matrix[2][3] = (matrix[2][0] * other.matrix[0][3]) + (matrix[2][1] * other.matrix[1][3]) + (matrix[2][2] * other.matrix[2][3]) + (matrix[2][3] * other.matrix[3][3]);
-
-	temp.matrix[3][0] = (matrix[3][0] * other.matrix[0][0]) + (matrix[3][1] * other.matrix[1][0]) + (matrix[3][2] * other.matrix[2][0]) + (matrix[3][3] * other.matrix[3][0]);
-	temp.matrix[3][1] = (matrix[3][0] * other.matrix[0][1]) + (matrix[3][1] * other.matrix[1][1]) + (matrix[3][2] * other.matrix[2][1]) + (matrix[3][3] * other.matrix[3][1]);
-	temp.matrix[3][2] = (matrix[3][0] * other.matrix[0][2]) + (matrix[3][1] * other.matrix[1][2]) + (matrix[3][2] * other.matrix[2][2]) + (matrix[3][3] * other.matrix[3][2]);
-	temp.matrix[3][3] = (matrix[3][0] * other.matrix[0][3]) + (matrix[3][1] * other.matrix[1][3]) + (matrix[3][2] * other.matrix[2][3]) + (matrix[3][3] * other.matrix[3][3]);
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			temp.matrix[i][j] = 0;
+			for (int k = 0; k < 4; k++) {
+				temp.matrix[i][j] += (matrix[i][k] * other.matrix[k][j]);
+			}
+		}
+	}
 
 	return temp;
 }
@@ -218,25 +207,14 @@ Matrix4 Matrix4::operator*=(Matrix4 other) {
 		}
 	}
 
-	matrix[0][0] = (temp.matrix[0][0] * other.matrix[0][0]) + (temp.matrix[0][1] * other.matrix[1][0]) + (temp.matrix[0][2] * other.matrix[2][0]) + (temp.matrix[0][3] * other.matrix[3][0]);
-	matrix[0][1] = (temp.matrix[0][0] * other.matrix[0][1]) + (temp.matrix[0][1] * other.matrix[1][1]) + (temp.matrix[0][2] * other.matrix[2][1]) + (temp.matrix[0][3] * other.matrix[3][1]);
-	matrix[0][2] = (temp.matrix[0][0] * other.matrix[0][2]) + (temp.matrix[0][1] * other.matrix[1][2]) + (temp.matrix[0][2] * other.matrix[2][2]) + (temp.matrix[0][3] * other.matrix[3][2]);
-	matrix[0][3] = (temp.matrix[0][0] * other.matrix[0][3]) + (temp.matrix[0][1] * other.matrix[1][3]) + (temp.matrix[0][2] * other.matrix[2][3]) + (temp.matrix[0][3] * other.matrix[3][3]);
-
-	matrix[1][0] = (temp.matrix[1][0] * other.matrix[0][0]) + (temp.matrix[1][1] * other.matrix[1][0]) + (temp.matrix[1][2] * other.matrix[2][0]) + (temp.matrix[1][3] * other.matrix[3][0]);
-	matrix[1][1] = (temp.matrix[1][0] * other.matrix[0][1]) + (temp.matrix[1][1] * other.matrix[1][1]) + (temp.matrix[1][2] * other.matrix[2][1]) + (temp.matrix[1][3] * other.matrix[3][1]);
-	matrix[1][2] = (temp.matrix[1][0] * other.matrix[0][2]) + (temp.matrix[1][1] * other.matrix[1][2]) + (temp.matrix[1][2] * other.matrix[2][2]) + (temp.matrix[1][3] * other.matrix[3][2]);
-	matrix[1][3] = (temp.matrix[1][0] * other.matrix[0][3]) + (temp.matrix[1][1] * other.matrix[1][3]) + (temp.matrix[1][2] * other.matrix[2][3]) + (temp.matrix[1][3] * other.matrix[3][3]);
-
-	matrix[2][0] = (temp.matrix[2][0] * other.matrix[0][0]) + (temp.matrix[2][1] * other.matrix[1][0]) + (temp.matrix[2][2] * other.matrix[2][0]) + (temp.matrix[2][3] * other.matrix[3][0]);
-	matrix[2][1] = (temp.matrix[2][0] * other.matrix[0][1]) + (temp.matrix[2][1] * other.matrix[1][1]) + (temp.matrix[2][2] * other.matrix[2][1]) + (temp.matrix[2][3] * other.matrix[3][1]);
-	matrix[2][2] = (temp.matrix[2][0] * other.matrix[0][2]) + (temp.matrix[2][1] * other.matrix[1][2]) + (temp.matrix[2][2] * other.matrix[2][2]) + (temp.matrix[2][3] * other.matrix[3][2]);
-	matrix[2][3] = (temp.matrix[2][0] * other.matrix[0][3]) + (temp.matrix[2][1] * other.matrix[1][3]) + (temp.matrix[2][2] * other.matrix[2][3]) + (temp.matrix[2][3] * other.matrix[3][3]);
-
-	matrix[3][0] = (temp.matrix[3][0] * other.matrix[0][0]) + (temp.matrix[3][1] * other.matrix[1][0]) + (temp.matrix[3][2] * other.matrix[2][0]) + (temp.matrix[3][3] * other.matrix[3][0]);
-	matrix[3][1] = (temp.matrix[3][0] * other.matrix[0][1]) + (temp.matrix[3][1] * other.matrix[1][1]) + (temp.matrix[3][2] * other.matrix[2][1]) + (temp.matrix[3][3] * other.matrix[3][1]);
-	matrix[3][2] = (temp.matrix[3][0] * other.matrix[0][2]) + (temp.matrix[3][1] * other.matrix[1][2]) + (temp.matrix[3][2] * other.matrix[2][2]) + (temp.matrix[3][3] * other.matrix[3][2]);
-	matrix[3][3] = (temp.matrix[3][0] * other.matrix[0][3]) + (temp.matrix[3][1] * other.matrix[1][3]) + (temp.matrix[3][2] * other.matrix[2][3]) + (temp.matrix[3][3] * other.matrix[3][3]);
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			matrix[i][j] = 0;
+			for (int k = 0; k < 4; k++) {
+				matrix[i][j] += (temp.matrix[i][k] * other.matrix[k][j]);
+			}
+		}
+	}
 
 	return temp;
 }
