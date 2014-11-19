@@ -46,6 +46,9 @@ public:
 
 };
 
+bool operator==(Vector3 left, Vector3 right);
+bool operator!=(Vector3 left, Vector3 right);
+
 
 
 #endif

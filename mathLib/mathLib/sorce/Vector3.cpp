@@ -147,6 +147,14 @@ void Vector3::operator*=(float input) {
 	this->z *= input;
 }
 
+bool operator==(Vector3 left, Vector3 right) {
+	return (left.x == right.x && left.y == right.y && left.z == right.z);
+}
+
+bool operator!=(Vector3 left, Vector3 right) {
+	return !(left == right);
+}
+
 std::ostream& operator<<(std::ostream& os, const Vector3& vec) {
 	os << "(" << vec.x << ", " << vec.y << ", " << vec.z << ")";
 	return os;
