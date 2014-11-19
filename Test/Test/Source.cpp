@@ -71,100 +71,122 @@ TEST(General_Functions_test, ShiftPowOfTwo_invalid)
 
 //vector2 testing
 TEST(Vector2_test, DotProduct_inst) {
-	EXPECT_TRUE(0 == Vector2(0, 0).DotProduct(Vector2(0, 0)));
-	EXPECT_TRUE(0 == Vector2(1, 1).DotProduct(Vector2(0, 0)));
-	EXPECT_TRUE(0 == Vector2(0, 0).DotProduct(Vector2(1, 1)));
-	EXPECT_TRUE(11 == Vector2(1, 2).DotProduct(Vector2(3, 4)));
-	EXPECT_TRUE(11 == Vector2(4, 3).DotProduct(Vector2(2, 1)));
-	EXPECT_TRUE(-5 == Vector2(1, -2).DotProduct(Vector2(3, 4)));
-	EXPECT_TRUE(5 == Vector2(4, 3).DotProduct(Vector2(2, -1)));
+	EXPECT_FLOAT_EQ(0, Vector2(0, 0).DotProduct(Vector2(0, 0)));
+	EXPECT_FLOAT_EQ(0, Vector2(1, 1).DotProduct(Vector2(0, 0)));
+	EXPECT_FLOAT_EQ(0, Vector2(0, 0).DotProduct(Vector2(1, 1)));
+	EXPECT_FLOAT_EQ(11, Vector2(1, 2).DotProduct(Vector2(3, 4)));
+	EXPECT_FLOAT_EQ(11, Vector2(4, 3).DotProduct(Vector2(2, 1)));
+	EXPECT_FLOAT_EQ(-5, Vector2(1, -2).DotProduct(Vector2(3, 4)));
+	EXPECT_FLOAT_EQ(5, Vector2(4, 3).DotProduct(Vector2(2, -1)));
 }
 
 TEST(Vector2_test, DotProduct_static) {
-	EXPECT_TRUE(0 == Vector2::DotProduct(Vector2(0, 0), Vector2(0, 0)));
-	EXPECT_TRUE(0 == Vector2::DotProduct(Vector2(1, 1), Vector2(0, 0)));
-	EXPECT_TRUE(0 == Vector2::DotProduct(Vector2(0, 0), Vector2(1, 1)));
-	EXPECT_TRUE(11 == Vector2::DotProduct(Vector2(1, 2), Vector2(3, 4)));
-	EXPECT_TRUE(11 == Vector2::DotProduct(Vector2(4, 3), Vector2(2, 1)));
-	EXPECT_TRUE(-5 == Vector2::DotProduct(Vector2(1, -2), Vector2(3, 4)));
-	EXPECT_TRUE(5 == Vector2::DotProduct(Vector2(4, 3), Vector2(2, -1)));
+	EXPECT_FLOAT_EQ(0, Vector2::DotProduct(Vector2(0, 0), Vector2(0, 0)));
+	EXPECT_FLOAT_EQ(0, Vector2::DotProduct(Vector2(1, 1), Vector2(0, 0)));
+	EXPECT_FLOAT_EQ(0, Vector2::DotProduct(Vector2(0, 0), Vector2(1, 1)));
+	EXPECT_FLOAT_EQ(11, Vector2::DotProduct(Vector2(1, 2), Vector2(3, 4)));
+	EXPECT_FLOAT_EQ(11, Vector2::DotProduct(Vector2(4, 3), Vector2(2, 1)));
+	EXPECT_FLOAT_EQ(-5, Vector2::DotProduct(Vector2(1, -2), Vector2(3, 4)));
+	EXPECT_FLOAT_EQ(5, Vector2::DotProduct(Vector2(4, 3), Vector2(2, -1)));
 }
 
 TEST(Vector2_test, CrossProduct_inst) {
-	EXPECT_TRUE(Vector2(0, 0) == Vector2(0,0).CrossProduct(Vector2(0, 0)));
-	EXPECT_TRUE(Vector2(0, 0) == Vector2(1, 1).CrossProduct(Vector2(0, 0)));
-	EXPECT_TRUE(Vector2(1, -1) == Vector2(0, 0).CrossProduct(Vector2(1, 1)));
-	EXPECT_TRUE(Vector2(4, -3) == Vector2(1, 2).CrossProduct(Vector2(3, 4)));
-	EXPECT_TRUE(Vector2(-4, -3) == Vector2(1, 2).CrossProduct(Vector2(3, -4)));
-	EXPECT_TRUE(Vector2(4, 3) == Vector2(1, 2).CrossProduct(Vector2(-3, 4)));
+	EXPECT_EQ(Vector2(0, 0), Vector2(0, 0).CrossProduct(Vector2(0, 0)));
+	EXPECT_EQ(Vector2(0, 0), Vector2(1, 1).CrossProduct(Vector2(0, 0)));
+	EXPECT_EQ(Vector2(1, -1), Vector2(0, 0).CrossProduct(Vector2(1, 1)));
+	EXPECT_EQ(Vector2(4, -3), Vector2(1, 2).CrossProduct(Vector2(3, 4)));
+	EXPECT_EQ(Vector2(-4, -3), Vector2(1, 2).CrossProduct(Vector2(3, -4)));
+	EXPECT_EQ(Vector2(4, 3), Vector2(1, 2).CrossProduct(Vector2(-3, 4)));
 }
 
 TEST(Vector2_test, CrossProduct_static) {
-	EXPECT_TRUE(Vector2(0, 0) == Vector2::CrossProduct(Vector2(0, 0), Vector2(0, 0)));
-	EXPECT_TRUE(Vector2(0, 0) == Vector2::CrossProduct(Vector2(1, 1), Vector2(0, 0)));
-	EXPECT_TRUE(Vector2(1, -1) == Vector2::CrossProduct(Vector2(0, 0), Vector2(1, 1)));
-	EXPECT_TRUE(Vector2(4, -3) == Vector2::CrossProduct(Vector2(5, 6), Vector2(3, 4)));
-	EXPECT_TRUE(Vector2(-4, -3) == Vector2::CrossProduct(Vector2(5, 6), Vector2(3, -4)));
-	EXPECT_TRUE(Vector2(4, 3) == Vector2::CrossProduct(Vector2(5, 6), Vector2(-3, 4)));
+	EXPECT_EQ(Vector2(0, 0), Vector2::CrossProduct(Vector2(0, 0), Vector2(0, 0)));
+	EXPECT_EQ(Vector2(0, 0), Vector2::CrossProduct(Vector2(1, 1), Vector2(0, 0)));
+	EXPECT_EQ(Vector2(1, -1), Vector2::CrossProduct(Vector2(0, 0), Vector2(1, 1)));
+	EXPECT_EQ(Vector2(4, -3), Vector2::CrossProduct(Vector2(5, 6), Vector2(3, 4)));
+	EXPECT_EQ(Vector2(-4, -3), Vector2::CrossProduct(Vector2(5, 6), Vector2(3, -4)));
+	EXPECT_EQ(Vector2(4, 3), Vector2::CrossProduct(Vector2(5, 6), Vector2(-3, 4)));
 }
 
 TEST(Vector2_test, Magnitude_inst) {
-	EXPECT_TRUE(0 == Vector2(0, 0).Magnitude());
-	EXPECT_TRUE(1 == Vector2(1, 0).Magnitude());
-	EXPECT_TRUE(1 == Vector2(0, 1).Magnitude());
-	EXPECT_TRUE(1 == Vector2(0, -1).Magnitude());
-	EXPECT_TRUE(1 == Vector2(-1, 0).Magnitude());
-	EXPECT_TRUE(sqrt(2.f) == Vector2(1, 1).Magnitude());
-	EXPECT_TRUE(sqrt(2.f) == Vector2(1, -1).Magnitude());
+	EXPECT_EQ_FLOAT(0, Vector2(0, 0).Magnitude());
+	EXPECT_EQ_FLOAT(1, Vector2(1, 0).Magnitude());
+	EXPECT_EQ_FLOAT(1, Vector2(0, 1).Magnitude());
+	EXPECT_EQ_FLOAT(1, Vector2(0, -1).Magnitude());
+	EXPECT_EQ_FLOAT(1, Vector2(-1, 0).Magnitude());
+	EXPECT_EQ_FLOAT(sqrt(2.f), Vector2(1, 1).Magnitude());
+	EXPECT_EQ_FLOAT(sqrt(2.f), Vector2(1, -1).Magnitude());
 }
 
 TEST(Vector2_test, Magnitude_static) {
-	EXPECT_TRUE(0 == Vector2::Magnitude(Vector2(0, 0)));
-	EXPECT_TRUE(1 == Vector2::Magnitude(Vector2(1, 0)));
-	EXPECT_TRUE(1 == Vector2::Magnitude(Vector2(0, 1)));
-	EXPECT_TRUE(1 == Vector2::Magnitude(Vector2(0, -1)));
-	EXPECT_TRUE(1 == Vector2::Magnitude(Vector2(-1, 0)));
-	EXPECT_TRUE(sqrt(2.f) == Vector2::Magnitude(Vector2(1, 1)));
-	EXPECT_TRUE(sqrt(2.f) == Vector2::Magnitude(Vector2(1, -1)));
+	EXPECT_EQ_FLOAT(0, Vector2::Magnitude(Vector2(0, 0)));
+	EXPECT_EQ_FLOAT(1, Vector2::Magnitude(Vector2(1, 0)));
+	EXPECT_EQ_FLOAT(1, Vector2::Magnitude(Vector2(0, 1)));
+	EXPECT_EQ_FLOAT(1, Vector2::Magnitude(Vector2(0, -1)));
+	EXPECT_EQ_FLOAT(1, Vector2::Magnitude(Vector2(-1, 0)));
+	EXPECT_EQ_FLOAT(sqrt(2.f), Vector2::Magnitude(Vector2(1, 1)));
+	EXPECT_EQ_FLOAT(sqrt(2.f), Vector2::Magnitude(Vector2(1, -1)));
 }
 
 TEST(Vector2_test, Normalize_inst) {
-	EXPECT_TRUE(Vector2(0, 0) == Vector2(0, 0).Normalize());
-	EXPECT_TRUE(Vector2(0.707106769, 0.707106769) == Vector2(2, 2).Normalize());
-	EXPECT_TRUE(Vector2(1, 0) == Vector2(2, 0).Normalize());
-	EXPECT_TRUE(Vector2(0, 1) == Vector2(0, 2).Normalize());
-	EXPECT_TRUE(Vector2(-1, 0) == Vector2(-2, 0).Normalize());
-	EXPECT_TRUE(Vector2(0, -1) == Vector2(0, -2).Normalize());
+	EXPECT_EQ(Vector2(0, 0), Vector2(0, 0).Normalize());
+	EXPECT_EQ(Vector2(0.707106769, 0.707106769), Vector2(2, 2).Normalize());
+	EXPECT_EQ(Vector2(1, 0), Vector2(2, 0).Normalize());
+	EXPECT_EQ(Vector2(0, 1), Vector2(0, 2).Normalize());
+	EXPECT_EQ(Vector2(-1, 0), Vector2(-2, 0).Normalize());
+	EXPECT_EQ(Vector2(0, -1), Vector2(0, -2).Normalize());
 }
 
 TEST(Vector2_test, Normalize_static) {
-	EXPECT_TRUE(Vector2(0, 0) == Vector2::Normalize(Vector2(0, 0)));
-	EXPECT_TRUE(Vector2(0.707106769, 0.707106769) == Vector2::Normalize(Vector2(2, 2)));
-	EXPECT_TRUE(Vector2(1, 0) == Vector2::Normalize(Vector2(2, 0)));
-	EXPECT_TRUE(Vector2(0, 1) == Vector2::Normalize(Vector2(0, 2)));
-	EXPECT_TRUE(Vector2(-1, 0) == Vector2::Normalize(Vector2(-2, 0)));
-	EXPECT_TRUE(Vector2(0, -1) == Vector2::Normalize(Vector2(0, -2)));
+	EXPECT_EQ(Vector2(0, 0), Vector2::Normalize(Vector2(0, 0)));
+	EXPECT_EQ(Vector2(0.707106769, 0.707106769), Vector2::Normalize(Vector2(2, 2)));
+	EXPECT_EQ(Vector2(1, 0), Vector2::Normalize(Vector2(2, 0)));
+	EXPECT_EQ(Vector2(0, 1), Vector2::Normalize(Vector2(0, 2)));
+	EXPECT_EQ(Vector2(-1, 0), Vector2::Normalize(Vector2(-2, 0)));
+	EXPECT_EQ(Vector2(0, -1), Vector2::Normalize(Vector2(0, -2)));
 }
 
 TEST(Vector2_test, NormalizeThis_) {
 	Vector2 temp = Vector2();
 	temp.NormalizeThis();
-	EXPECT_TRUE(Vector2(0, 0) == temp);
+	EXPECT_EQ(Vector2(0, 0), temp);
 	temp = Vector2(2, 2);
 	temp.NormalizeThis();
-	EXPECT_TRUE(Vector2(0.707106769, 0.707106769) == temp);
+	EXPECT_EQ(Vector2(0.707106769, 0.707106769), temp);
 	temp = Vector2(2, 0);
 	temp.NormalizeThis();
-	EXPECT_TRUE(Vector2(1, 0) == temp);
+	EXPECT_EQ(Vector2(1, 0), temp);
 	temp = Vector2(0, 2);
 	temp.NormalizeThis();
-	EXPECT_TRUE(Vector2(0, 1) == temp);
+	EXPECT_EQ(Vector2(0, 1), temp);
 	temp = Vector2(-2, 0);
 	temp.NormalizeThis();
-	EXPECT_TRUE(Vector2(-1, 0) == temp);
+	EXPECT_EQ(Vector2(-1, 0), temp);
 	temp = Vector2(0, -2);
 	temp.NormalizeThis();
-	EXPECT_TRUE(Vector2(0, -1) == temp);
+	EXPECT_EQ(Vector2(0, -1), temp);
+}
+
+TEST(Vector2_test, Lerp_inst) {
+	EXPECT_EQ(Vector2(0, 0), Vector2(0, 0).Lerp(Vector2(0, 0), 0));
+	EXPECT_EQ(Vector2(1, 1), Vector2(0, 0).Lerp(Vector2(2, 2), .5));
+	EXPECT_EQ(Vector2(3, 3), Vector2(2, 2).Lerp(Vector2(4, 4), .5));
+	EXPECT_EQ(Vector2(1, 1), Vector2(2, 0).Lerp(Vector2(0, 2), .5));
+	EXPECT_EQ(Vector2(5, 7), Vector2(5, 7).Lerp(Vector2(9, 9), 0));
+	EXPECT_EQ(Vector2(9, 9), Vector2(5, 7).Lerp(Vector2(9, 9), 1));
+	EXPECT_EQ(Vector2(0, 0), Vector2(1, 1).Lerp(Vector2(-1, -1), .5));
+	EXPECT_EQ(Vector2(0, 0), Vector2(-1, -1).Lerp(Vector2(1, 1), .5));
+}
+
+TEST(Vector2_test, Lerp_static) {
+	EXPECT_EQ(Vector2(0, 0), Vector2::Lerp(Vector2(0, 0), Vector2(0, 0), 0));
+	EXPECT_EQ(Vector2(1, 1), Vector2::Lerp(Vector2(0, 0), Vector2(2, 2), .5));
+	EXPECT_EQ(Vector2(3, 3), Vector2::Lerp(Vector2(2, 2), Vector2(4, 4), .5));
+	EXPECT_EQ(Vector2(1, 1), Vector2::Lerp(Vector2(2, 0), Vector2(0, 2), .5));
+	EXPECT_EQ(Vector2(5, 7), Vector2::Lerp(Vector2(5, 7), Vector2(9, 9), 0));
+	EXPECT_EQ(Vector2(9, 9), Vector2::Lerp(Vector2(5, 7), Vector2(9, 9), 1));
+	EXPECT_EQ(Vector2(0, 0), Vector2::Lerp(Vector2(1, 1), Vector2(-1, -1), .5));
+	EXPECT_EQ(Vector2(0, 0), Vector2::Lerp(Vector2(-1, -1), Vector2(1, 1), .5));
 }
 
 int main(int argc, char** argv)

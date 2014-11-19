@@ -131,11 +131,11 @@ void Vector2::operator*=(float input) {
 	this->y *= input;
 }
 
-bool Vector2::operator==(Vector2 other) {
-	return (this->x == other.x && this->y == other.y);
+bool operator==(Vector2 left, Vector2 right) {
+	return (left.x == right.x && left.y == right.y);
 }
-bool Vector2::operator!=(Vector2 other) {
-	return !((*this) == other);
+bool operator!=(Vector2 left, Vector2 right) {
+	return !(left == right);
 }
 
 std::ostream& operator<<(std::ostream& os, const Vector2& vec) {
