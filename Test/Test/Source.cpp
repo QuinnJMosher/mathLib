@@ -287,6 +287,56 @@ TEST(Vector3_test, Normalize_static) {
 	EXPECT_EQ(Vector3(0, 0.447214, 0.894427), Vector3::Normalize(Vector3(0, 2, 4)));
 }
 
+TEST(Vector3_test, NormalizeThis_) {
+	Vector3 temp = Vector3(0, 0, 0);
+	temp.NormalizeThis();
+	EXPECT_EQ(Vector3(0, 0, 0), temp);
+	temp = Vector3(2, 0, 0);
+	temp.NormalizeThis();
+	EXPECT_EQ(Vector3(1, 0, 0), temp);
+	temp = Vector3(0, 3, 0);
+	temp.NormalizeThis();
+	EXPECT_EQ(Vector3(0, 1, 0), temp);
+	temp = Vector3(0, 0, 4);
+	temp.NormalizeThis();
+	EXPECT_EQ(Vector3(0, 0, 1), temp);
+	temp = Vector3(0, 0, -5);
+	temp.NormalizeThis();
+	EXPECT_EQ(Vector3(0, 0, -1), temp);
+	temp = Vector3(0, 2, 2);
+	temp.NormalizeThis();
+	EXPECT_EQ(Vector3(0, 0.707107, 0.707107), temp);
+	temp = Vector3(0, 2, -2);
+	temp.NormalizeThis();
+	EXPECT_EQ(Vector3(0, 0.707107, -0.707107), temp);
+	temp = Vector3(0, 2, 4);
+	temp.NormalizeThis();
+	EXPECT_EQ(Vector3(0, 0.447214, 0.894427), temp);
+}
+
+TEST(Vector3_test, Lerp_inst) {
+	EXPECT_EQ(Vector3(0, 0, 0), Vector3(0, 0, 0).Lerp(Vector3(0, 0, 0), 0));
+	EXPECT_EQ(Vector3(0.5, 0.5, 0.5), Vector3(0, 0, 0).Lerp(Vector3(1, 1, 1), 0.5));
+	EXPECT_EQ(Vector3(0.5, 0.5, 1), Vector3(0, 0, 0).Lerp(Vector3(1, 1, 2), 0.5));
+	EXPECT_EQ(Vector3(0.5, 1, 1.5), Vector3(0, 0, 0).Lerp(Vector3(1, 2, 3), 0.5));
+	EXPECT_EQ(Vector3(0, 0, 0), Vector3(-1, -1, -1).Lerp(Vector3(1, 1, 1), 0.5));
+	EXPECT_EQ(Vector3(0.7, 0.7, 0.7), Vector3(0, 0, 0).Lerp(Vector3(1, 1, 1), 0.7));
+	EXPECT_EQ(Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1).Lerp(Vector3(0, 0, 0), 0.5));
+	EXPECT_EQ(Vector3(1, 2, 3), Vector3(0, 0, 0).Lerp(Vector3(1, 2, 3), 1));
+
+}
+
+TEST(Vector3_test, Lerp_static) {
+	EXPECT_EQ(Vector3(0, 0, 0), Vector3::Lerp(Vector3(0, 0, 0), Vector3(0, 0, 0), 0));
+	EXPECT_EQ(Vector3(0.5, 0.5, 0.5), Vector3::Lerp(Vector3(0, 0, 0), Vector3(1, 1, 1), 0.5));
+	EXPECT_EQ(Vector3(0.5, 0.5, 1), Vector3::Lerp(Vector3(0, 0, 0), Vector3(1, 1, 2), 0.5));
+	EXPECT_EQ(Vector3(0.5, 1, 1.5), Vector3::Lerp(Vector3(0, 0, 0), Vector3(1, 2, 3), 0.5));
+	EXPECT_EQ(Vector3(0, 0, 0), Vector3::Lerp(Vector3(-1, -1, -1), Vector3(1, 1, 1), 0.5));
+	EXPECT_EQ(Vector3(0.7, 0.7, 0.7), Vector3::Lerp(Vector3(0, 0, 0), Vector3(1, 1, 1), 0.7));
+	EXPECT_EQ(Vector3(0.5, 0.5, 0.5), Vector3::Lerp(Vector3(1, 1, 1), Vector3(0, 0, 0), 0.5));
+	EXPECT_EQ(Vector3(1, 2, 3), Vector3::Lerp(Vector3(0, 0, 0), Vector3(1, 2, 3), 1));
+}
+
 int main(int argc, char** argv)
 {
 	testing::InitGoogleTest(&argc, argv);
