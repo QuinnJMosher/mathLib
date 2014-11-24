@@ -214,6 +214,77 @@ TEST(Vector3_test, op_not_equal) {
 TEST(Vector3_test, DotProduct_inst) {
 	EXPECT_FLOAT_EQ(0, Vector3(0, 0, 0).DotProduct(Vector3(0, 0, 0)));
 	EXPECT_FLOAT_EQ(3, Vector3(1, 1, 1).DotProduct(Vector3(1, 1, 1)));
+	EXPECT_FLOAT_EQ(32, Vector3(1, 2, 3).DotProduct(Vector3(4, 5, 6)));
+	EXPECT_FLOAT_EQ(32, Vector3(-1, -2, -3).DotProduct(Vector3(-4, -5, -6)));
+	EXPECT_FLOAT_EQ(-32, Vector3(1, 2, 3).DotProduct(Vector3(-4, -5, -6)));
+}
+
+TEST(Vector3_test, DotProduct_static) {
+	EXPECT_FLOAT_EQ(0, Vector3::DotProduct(Vector3(0, 0, 0), Vector3(0, 0, 0)));
+	EXPECT_FLOAT_EQ(3, Vector3::DotProduct(Vector3(1, 1, 1), Vector3(1, 1, 1)));
+	EXPECT_FLOAT_EQ(32, Vector3::DotProduct(Vector3(4, 5, 6), Vector3(1, 2, 3)));
+	EXPECT_FLOAT_EQ(32, Vector3::DotProduct(Vector3(-4, -5, -6), Vector3(-1, -2, -3)));
+	EXPECT_FLOAT_EQ(-32, Vector3::DotProduct(Vector3(-4, -5, -6), Vector3(1, 2, 3)));
+}
+
+TEST(Vector3_test, CrossProduct_inst) {
+	EXPECT_EQ(Vector3(0, 0, 0), Vector3(0, 0, 0).CrossProduct(Vector3(0, 0, 0)));
+	EXPECT_EQ(Vector3(-3, 6, -3), Vector3(1, 2, 3).CrossProduct(Vector3(4, 5, 6)));
+	EXPECT_EQ(Vector3(-3, 6, -3), Vector3(-1, -2, -3).CrossProduct(Vector3(-4, -5, -6)));
+	EXPECT_EQ(Vector3(-3, -6, -3), Vector3(1, -2, 3).CrossProduct(Vector3(-4, 5, -6)));
+}
+
+TEST(Vector3_test, CrossProduct_static) {
+	EXPECT_EQ(Vector3(0, 0, 0), Vector3::CrossProduct(Vector3(0, 0, 0), Vector3(0, 0, 0)));
+	EXPECT_EQ(Vector3(3, -6, 3), Vector3::CrossProduct(Vector3(4, 5, 6), Vector3(1, 2, 3)));
+	EXPECT_EQ(Vector3(3, -6, 3), Vector3::CrossProduct(Vector3(-4, -5, -6), Vector3(-1, -2, -3)));
+	EXPECT_EQ(Vector3(3, 6, 3), Vector3::CrossProduct(Vector3(-4, 5, -6), Vector3(1, -2, 3)));
+}
+
+TEST(Vector3_test, Magnitude_inst) {
+	EXPECT_FLOAT_EQ(0, Vector3(0, 0, 0).Magnitude());
+	EXPECT_FLOAT_EQ(1, Vector3(1, 0, 0).Magnitude());
+	EXPECT_FLOAT_EQ(1, Vector3(0, 1, 0).Magnitude());
+	EXPECT_FLOAT_EQ(1, Vector3(0, 0, 1).Magnitude());
+	EXPECT_FLOAT_EQ(2, Vector3(0, 0, 2).Magnitude());
+	EXPECT_FLOAT_EQ(1, Vector3(0, 0, -1).Magnitude());
+	EXPECT_FLOAT_EQ(1.4142135, Vector3(0, 1, 1).Magnitude());
+	EXPECT_FLOAT_EQ(1.4142135, Vector3(1, 0, -1).Magnitude());
+	EXPECT_FLOAT_EQ(1.7320508, Vector3(1, 1, 1).Magnitude());
+}
+
+TEST(Vector3_test, Magnitude_static) {
+	EXPECT_FLOAT_EQ(0, Vector3::Magnitude(Vector3(0, 0, 0)));
+	EXPECT_FLOAT_EQ(1, Vector3::Magnitude(Vector3(1, 0, 0)));
+	EXPECT_FLOAT_EQ(1, Vector3::Magnitude(Vector3(0, 1, 0)));
+	EXPECT_FLOAT_EQ(1, Vector3::Magnitude(Vector3(0, 0, 1)));
+	EXPECT_FLOAT_EQ(2, Vector3::Magnitude(Vector3(0, 0, 2)));
+	EXPECT_FLOAT_EQ(1, Vector3::Magnitude(Vector3(0, 0, -1)));
+	EXPECT_FLOAT_EQ(1.4142135, Vector3::Magnitude(Vector3(0, 1, 1)));
+	EXPECT_FLOAT_EQ(1.4142135, Vector3::Magnitude(Vector3(1, 0, -1)));
+	EXPECT_FLOAT_EQ(1.7320508, Vector3::Magnitude(Vector3(1, 1, 1)));
+}
+
+TEST(Vector3_test, Normalize_inst) {
+	EXPECT_EQ(Vector3(0, 0, 0), Vector3(0, 0, 0).Normalize());
+	EXPECT_EQ(Vector3(1, 0, 0), Vector3(2, 0, 0).Normalize());
+	EXPECT_EQ(Vector3(0, 1, 0), Vector3(0, 3, 0).Normalize());
+	EXPECT_EQ(Vector3(0, 0, 1), Vector3(0, 0, 4).Normalize());
+	EXPECT_EQ(Vector3(0, 0, -1), Vector3(0, 0, -5).Normalize());
+	EXPECT_EQ(Vector3(0, 0.707107, 0.707107), Vector3(0, 2, 2).Normalize());
+	EXPECT_EQ(Vector3(0, 0.707107, -0.707107), Vector3(0, 2, -2).Normalize());
+	EXPECT_EQ(Vector3(0, 0.447214, 0.894427), Vector3(0, 2, 4).Normalize());
+}
+
+TEST(Vector3_test, Normalize_static) {
+	EXPECT_EQ(Vector3(0, 0, 0), Vector3::Normalize(Vector3(0, 0, 0)));
+	EXPECT_EQ(Vector3(1, 0, 0), Vector3::Normalize(Vector3(2, 0, 0)));
+	EXPECT_EQ(Vector3(0, 1, 0), Vector3::Normalize(Vector3(0, 3, 0)));
+	EXPECT_EQ(Vector3(0, 0, 1), Vector3::Normalize(Vector3(0, 0, 4)));
+	EXPECT_EQ(Vector3(0, 0, -1), Vector3::Normalize(Vector3(0, 0, -5)));
+	EXPECT_EQ(Vector3(0, 0.707107, 0.707107), Vector3::Normalize(Vector3(0, 2, 2)));
+	EXPECT_EQ(Vector3(0, 0.707107, -0.707107), Vector3::Normalize(Vector3(0, 2, -2)));
+	EXPECT_EQ(Vector3(0, 0.447214, 0.894427), Vector3::Normalize(Vector3(0, 2, 4)));
 }
 
 int main(int argc, char** argv)

@@ -148,7 +148,15 @@ void Vector3::operator*=(float input) {
 }
 
 bool operator==(Vector3 left, Vector3 right) {
-	return (left.x == right.x && left.y == right.y && left.z == right.z);
+	float error = 0.00001f;
+	if (std::abs(left.x - right.x) <= error) {
+		if (std::abs(left.y - right.y) <= error) {
+			if (std::abs(left.z - right.z) <= error) {
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 bool operator!=(Vector3 left, Vector3 right) {

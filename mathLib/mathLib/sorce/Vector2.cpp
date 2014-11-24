@@ -132,7 +132,13 @@ void Vector2::operator*=(float input) {
 }
 
 bool operator==(Vector2 left, Vector2 right) {
-	return (left.x == right.x && left.y == right.y);
+	float error = 0.00001f;
+	if (std::abs(left.x - right.x) <= error) {
+		if (std::abs(left.y - right.y) <= error) {
+				return true;
+		}
+	}
+	return false;
 }
 bool operator!=(Vector2 left, Vector2 right) {
 	return !(left == right);
