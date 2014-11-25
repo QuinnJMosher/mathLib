@@ -28,4 +28,8 @@ public:
 	friend std::ostream& operator<<(std::ostream& os, const Vector4& vec);
 };
 
+
+bool operator==(Vector4 left, Vector4 right);
+bool operator!=(Vector4 left, Vector4 right);
+
 #endif

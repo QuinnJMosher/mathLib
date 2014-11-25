@@ -5,6 +5,7 @@
 #include "General.cpp"
 #include "Vector2.cpp";
 #include "Vector3.cpp";
+#include "Vector4.cpp";
 
 //General class test
 TEST(General_Functions_test, To_Degrees)
@@ -335,6 +336,59 @@ TEST(Vector3_test, Lerp_static) {
 	EXPECT_EQ(Vector3(0.7, 0.7, 0.7), Vector3::Lerp(Vector3(0, 0, 0), Vector3(1, 1, 1), 0.7));
 	EXPECT_EQ(Vector3(0.5, 0.5, 0.5), Vector3::Lerp(Vector3(1, 1, 1), Vector3(0, 0, 0), 0.5));
 	EXPECT_EQ(Vector3(1, 2, 3), Vector3::Lerp(Vector3(0, 0, 0), Vector3(1, 2, 3), 1));
+}
+
+TEST(Vector4_test, op_equal) {
+	EXPECT_TRUE(Vector4(1, 2, 3, 4) == Vector4(1, 2, 3, 4));
+	EXPECT_FALSE(Vector4(1, 2, 3, 4) == Vector4(5, 6, 7, 8));
+}
+
+TEST(Vector4_test, op_not_equal) {
+	EXPECT_FALSE(Vector4(1, 2, 3, 4) != Vector4(1, 2, 3, 4));
+	EXPECT_TRUE(Vector4(1, 2, 3, 4) != Vector4(5, 6, 7, 8));
+}
+
+TEST(Vector4_test, constructFromColor_4_floats) {
+	EXPECT_EQ(Vector4(0,0,0,0), Vector4::ConstructFromColor(0, 0, 0, 0));
+	EXPECT_EQ(Vector4(10.f/255, 20.f/255, 30.f/255, 40.f/255), Vector4::ConstructFromColor(10, 20, 30, 40));
+	EXPECT_EQ(Vector4(0, 0, 0, 0), Vector4::ConstructFromColor(10, 20, -30, 40));
+}
+
+TEST(Vector4_test, constructFromColor_hex_number) {
+	EXPECT_EQ(Vector4(0, 0, 0, 0), Vector4::ConstructFromColor(0x00000000));
+	EXPECT_EQ(Vector4(1.f / 255, 2.f / 255, 3.f / 255, 4.f / 255), Vector4::ConstructFromColor(0x01020304));
+}
+
+TEST(Vector4_test, magnitude_inst) {
+	EXPECT_FLOAT_EQ(0, Vector4(0, 0, 0, 0).Magnitude());
+	EXPECT_FLOAT_EQ(2, Vector4(1, 1, -1, -1).Magnitude());
+	EXPECT_FLOAT_EQ(2, Vector4(1, 1, 1, 1).Magnitude());
+	EXPECT_FLOAT_EQ(2, Vector4(-1, -1, -1, -1).Magnitude());
+	EXPECT_FLOAT_EQ(2, Vector4(0, 0, 0, 2).Magnitude());
+	
+}
+
+TEST(Vector4_test, magnitude_static) {
+	EXPECT_FLOAT_EQ(0, Vector4::Magnitude(Vector4(0, 0, 0, 0)));
+	EXPECT_FLOAT_EQ(2, Vector4::Magnitude(Vector4(1, 1, -1, -1)));
+	EXPECT_FLOAT_EQ(2, Vector4::Magnitude(Vector4(1, 1, 1, 1)));
+	EXPECT_FLOAT_EQ(2, Vector4::Magnitude(Vector4(-1, -1, -1, -1)));
+	EXPECT_FLOAT_EQ(2, Vector4::Magnitude(Vector4(0, 0, 0, 2)));
+
+}
+
+TEST(Vector4_test, Normalize_inst) {
+	EXPECT_EQ(Vector4(0, 0, 0, 0), Vector4(0, 0, 0, 0).Normalize());
+	EXPECT_EQ(Vector4(0.5f, 0.5f, 0.5f, 0.5f), Vector4(1, 1, 1, 1).Normalize());
+	EXPECT_EQ(Vector4(0.5f, 0.5f, 0.5f, 0.5f), Vector4(2, 2, 2, 2).Normalize());
+	EXPECT_EQ(Vector4(-0.5f, -0.5f, 0.5f, 0.5f), Vector4(-1, -1, 1, 1).Normalize());
+}
+
+TEST(Vector4_test, Normalize_static) {
+	EXPECT_EQ(Vector4(0, 0, 0, 0), Vector4::Normalize(Vector4(0, 0, 0, 0)));
+	EXPECT_EQ(Vector4(0.5f, 0.5f, 0.5f, 0.5f), Vector4::Normalize(Vector4(1, 1, 1, 1)));
+	EXPECT_EQ(Vector4(0.5f, 0.5f, 0.5f, 0.5f), Vector4::Normalize(Vector4(2, 2, 2, 2)));
+	EXPECT_EQ(Vector4(-0.5f, -0.5f, 0.5f, 0.5f), Vector4::Normalize(Vector4(-1, -1, 1, 1)));
 }
 
 int main(int argc, char** argv)
