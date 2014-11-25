@@ -150,6 +150,26 @@ Vector2 Matrix3::operator*(Vector2 other) {
 	return out;
 }
 
+void Matrix3::set(int in_col, int in_row, float in_value) {
+	if (in_col < 3 && in_row < 3) {
+		matrix[in_col][in_row] = in_value;
+	}
+}
+
+void Matrix3::set(float in_00, float in_01, float in_02, float in_10, float in_11, float in_12, float in_20, float in_21, float in_22) {
+	matrix[0][0] = in_00;
+	matrix[0][1] = in_01;
+	matrix[0][2] = in_02;
+
+	matrix[1][0] = in_10;
+	matrix[1][1] = in_11;
+	matrix[1][2] = in_12;
+
+	matrix[2][0] = in_20;
+	matrix[2][1] = in_21;
+	matrix[2][2] = in_22;
+}
+
 std::ostream& operator<<(std::ostream& os, const Matrix3& mx3) {
 	os << "[[" << mx3.matrix[0][0] << ", " << mx3.matrix[0][1] << ", " << mx3.matrix[0][2] << "]\n";
 	os << " [" << mx3.matrix[1][0] << ", " << mx3.matrix[1][1] << ", " << mx3.matrix[1][2] << "]\n";

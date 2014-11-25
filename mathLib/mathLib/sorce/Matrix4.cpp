@@ -229,6 +229,34 @@ Vector3 Matrix4::operator*(Vector3 other) {
 	return out;
 }
 
+void Matrix4::set(int in_col, int in_row, float in_value) {
+	if (in_col < 4 && in_row < 4) {
+		matrix[in_col][in_row] = in_value;
+	}
+}
+
+void Matrix4::set(float in_00, float in_01, float in_02, float in_03, float in_10, float in_11, float in_12, float in_13, float in_20, float in_21, float in_22, float in_23, float in_30, float in_31, float in_32, float in_33) {
+	matrix[0][0] = in_00;
+	matrix[0][1] = in_01;
+	matrix[0][2] = in_02;
+	matrix[0][3] = in_03;
+
+	matrix[1][0] = in_10;
+	matrix[1][1] = in_11;
+	matrix[1][2] = in_12;
+	matrix[1][3] = in_13;
+
+	matrix[2][0] = in_20;
+	matrix[2][1] = in_21;
+	matrix[2][2] = in_22;
+	matrix[2][3] = in_23;
+
+	matrix[3][0] = in_30;
+	matrix[3][1] = in_31;
+	matrix[3][2] = in_32;
+	matrix[3][3] = in_33;
+}
+
 std::ostream& operator<<(std::ostream& os, const Matrix4& mx4) {
 	os << "[[" << mx4.matrix[0][0] << ", " << mx4.matrix[0][1] << ", " << mx4.matrix[0][2] << ", " << mx4.matrix[0][3] << "]\n";
 	os << " [" << mx4.matrix[1][0] << ", " << mx4.matrix[1][1] << ", " << mx4.matrix[1][2] << ", " << mx4.matrix[1][3] << "]\n";
