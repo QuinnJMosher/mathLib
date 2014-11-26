@@ -1,4 +1,4 @@
-﻿Build started 11/24/2014 5:14:45 PM.
+﻿Build started 11/25/2014 2:14:05 PM.
      1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\Test\Test\Test.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\mathLib\sorce /I"C:\Users\quinn.mosher\Documents\GitHub\mathLib\gtest-1.7.0\gtest-1.7.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
@@ -12,36 +12,46 @@
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(8): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(14): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(15): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(16): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(17): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(23): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(24): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(18): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(19): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(25): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(26): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(32): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(39): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(145): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(154): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(167): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(252): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(253): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(27): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(28): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(34): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(41): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(147): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(156): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(169): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(254): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(264): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(265): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(255): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(256): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(266): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(275): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(276): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(267): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(268): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(277): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(286): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(287): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(278): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(279): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(288): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(309): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(312): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(315): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(324): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(336): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(289): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(290): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(311): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(314): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(317): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(326): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(338): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(423): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(427): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(538): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(542): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(555): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(559): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(572): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\test\test\source.cpp(576): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Test\Debug\Test.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\gtest-1.7.0\gtest-1.7.0\msvc\gtest-md\Debug" gtestd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Test\Debug\Test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Test\Debug\Test.lib" /MACHINE:X86 Debug\Source.obj
          Test.vcxproj -> C:\Users\quinn.mosher\Documents\GitHub\mathLib\Test\Debug\Test.exe
@@ -49,4 +59,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.17
+Time Elapsed 00:00:01.11

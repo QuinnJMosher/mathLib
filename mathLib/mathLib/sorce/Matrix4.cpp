@@ -22,10 +22,13 @@ void Matrix4::reset() {
 Matrix4 Matrix4::XRotation(float in_degrees) {
 	this->reset();
 
-	matrix[1][1] = std::cos(-in_degrees);
-	matrix[1][2] = -std::sin(-in_degrees);
-	matrix[2][1] = std::sin(-in_degrees);
-	matrix[2][2] = cos(-in_degrees);
+
+	if (in_degrees != 0) {
+		matrix[1][1] = std::cos(-in_degrees);
+		matrix[1][2] = -std::sin(-in_degrees);
+		matrix[2][1] = std::sin(-in_degrees);
+		matrix[2][2] = std::cos(-in_degrees);
+	}
 
 	return *this;
 }
@@ -33,10 +36,12 @@ Matrix4 Matrix4::XRotation(float in_degrees) {
 Matrix4 Matrix4::YRotation(float in_degrees) {
 	this->reset();
 
-	matrix[0][0] = std::cos(-in_degrees);
-	matrix[0][2] = std::sin(-in_degrees);
-	matrix[2][0] = -std::sin(-in_degrees);
-	matrix[2][2] = cos(-in_degrees);
+	if (in_degrees != 0) {
+		matrix[0][0] = std::cos(-in_degrees);
+		matrix[0][2] = std::sin(-in_degrees);
+		matrix[2][0] = -std::sin(-in_degrees);
+		matrix[2][2] = std::cos(-in_degrees);
+	}
 
 	return *this;
 }
@@ -44,10 +49,12 @@ Matrix4 Matrix4::YRotation(float in_degrees) {
 Matrix4 Matrix4::ZRotation(float in_degrees) {
 	this->reset();
 
-	matrix[0][0] = std::cos(-in_degrees);
-	matrix[0][1] = -std::sin(-in_degrees);
-	matrix[1][0] = std::sin(-in_degrees);
-	matrix[1][1] = cos(-in_degrees);
+	if (in_degrees != 0) {
+		matrix[0][0] = std::cos(-in_degrees);
+		matrix[0][1] = -std::sin(-in_degrees);
+		matrix[1][0] = std::sin(-in_degrees);
+		matrix[1][1] = std::cos(-in_degrees);
+	}
 
 	return *this;
 }
@@ -255,6 +262,22 @@ void Matrix4::set(float in_00, float in_01, float in_02, float in_03, float in_1
 	matrix[3][1] = in_31;
 	matrix[3][2] = in_32;
 	matrix[3][3] = in_33;
+}
+
+bool operator==(Matrix4 left, Matrix4 right) {
+	bool equality = true;
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (std::abs(right.matrix[i][j] - left.matrix[i][j]) > 0.00001) {
+				equality = false;
+			}
+		}
+	}
+	return equality;
+}
+
+bool operator!=(Matrix4 left, Matrix4 right) {
+	return !(left == right);
 }
 
 std::ostream& operator<<(std::ostream& os, const Matrix4& mx4) {

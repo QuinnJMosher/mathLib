@@ -20,10 +20,12 @@ void Matrix3::reset() {
 Matrix3 Matrix3::Rotation(float in_degrees) {
 	this->reset();
 
-	matrix[0][0] = std::cos(in_degrees);
-	matrix[1][0] = std::sin(in_degrees);
-	matrix[0][1] = -(std::sin(in_degrees));
-	matrix[1][1] = std::cos(in_degrees);
+	if (in_degrees != 0) {
+		matrix[0][0] = std::cos(in_degrees);
+		matrix[1][0] = std::sin(in_degrees);
+		matrix[0][1] = -(std::sin(in_degrees));
+		matrix[1][1] = std::cos(in_degrees);
+	}
 
 	return *this;
 }
@@ -31,8 +33,12 @@ Matrix3 Matrix3::Rotation(float in_degrees) {
 Matrix3 Matrix3::Scale(float in_xScale, float in_yScale) {
 	this->reset();
 
-	matrix[0][0] = in_xScale;
-	matrix[1][1] = in_yScale;
+	if (in_xScale > 0) {
+		matrix[0][0] = in_xScale;
+	}
+	if (in_yScale > 0) {
+		matrix[1][1] = in_yScale;
+	}
 
 	return *this;
 }
@@ -168,6 +174,22 @@ void Matrix3::set(float in_00, float in_01, float in_02, float in_10, float in_1
 	matrix[2][0] = in_20;
 	matrix[2][1] = in_21;
 	matrix[2][2] = in_22;
+}
+
+bool operator==(Matrix3 right, Matrix3 left) {
+	bool equality = true;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (std::abs(right.matrix[i][j] - left.matrix[i][j]) > 0.00001) {
+				equality = false;
+			}
+		}
+	}
+	return equality;
+}
+
+bool operator!=(Matrix3 right, Matrix3 left) {
+	return !(right == left);
 }
 
 std::ostream& operator<<(std::ostream& os, const Matrix3& mx3) {

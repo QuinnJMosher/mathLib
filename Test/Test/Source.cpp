@@ -6,6 +6,8 @@
 #include "Vector2.cpp";
 #include "Vector3.cpp";
 #include "Vector4.cpp";
+#include "Matrix3.cpp";
+#include "Matrix4.cpp";
 
 //General class test
 TEST(General_Functions_test, To_Degrees)
@@ -338,6 +340,7 @@ TEST(Vector3_test, Lerp_static) {
 	EXPECT_EQ(Vector3(1, 2, 3), Vector3::Lerp(Vector3(0, 0, 0), Vector3(1, 2, 3), 1));
 }
 
+//vector 4 tests
 TEST(Vector4_test, op_equal) {
 	EXPECT_TRUE(Vector4(1, 2, 3, 4) == Vector4(1, 2, 3, 4));
 	EXPECT_FALSE(Vector4(1, 2, 3, 4) == Vector4(5, 6, 7, 8));
@@ -389,6 +392,193 @@ TEST(Vector4_test, Normalize_static) {
 	EXPECT_EQ(Vector4(0.5f, 0.5f, 0.5f, 0.5f), Vector4::Normalize(Vector4(1, 1, 1, 1)));
 	EXPECT_EQ(Vector4(0.5f, 0.5f, 0.5f, 0.5f), Vector4::Normalize(Vector4(2, 2, 2, 2)));
 	EXPECT_EQ(Vector4(-0.5f, -0.5f, 0.5f, 0.5f), Vector4::Normalize(Vector4(-1, -1, 1, 1)));
+}
+
+//matrix3 tests
+TEST(Matrix3_test, op_equal) {
+	Matrix3 mx1 = Matrix3();
+	Matrix3 mx2 = Matrix3();
+	mx1.set(1, 2, 3);
+	mx2.set(1, 2, 3);
+	EXPECT_TRUE(mx1 == mx2);
+	mx2.set(1, 1, 2);
+	EXPECT_FALSE(mx1 == mx2);
+}
+
+TEST(Matrix3_test, op_not_equal) {
+	Matrix3 mx1 = Matrix3();
+	Matrix3 mx2 = Matrix3();
+	mx1.set(1, 2, 3);
+	mx2.set(1, 2, 3);
+	EXPECT_FALSE(mx1 != mx2);
+	mx2.set(1, 1, 2);
+	EXPECT_TRUE(mx1 != mx2);
+}
+
+TEST(Matrix3_test, rotation) {
+	Matrix3 expected = Matrix3();
+	Matrix3 actual = Matrix3();
+
+	actual.Rotation(10);
+	expected.set(std::cos(10), -(std::sin(10)), 0, std::sin(10), std::cos(10), 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.Rotation(-10);
+	expected.set(std::cos(-10), -(std::sin(-10)), 0, std::sin(-10), std::cos(-10), 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.Rotation(0);
+	expected.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix3_test, Scale) {
+	Matrix3 expected = Matrix3();
+	Matrix3 actual = Matrix3();
+
+	actual.Scale(2,3);
+	expected.set(2, 0, 0, 0, 3, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.Scale(0.4f, 0.5f);
+	expected.set(0.4f, 0, 0, 0, 0.5f, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.Scale(-2, -3);
+	expected.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.Scale(0, 0);
+	expected.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix3_test, Transform_Vector) {
+	Matrix3 expected = Matrix3();
+	Matrix3 actual = Matrix3();
+
+	actual.TransformVector(1, 2);
+	expected.set(1, 0, 1, 0, 1, 2, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.TransformVector(0, 0);
+	expected.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.TransformVector(-3, -4);
+	expected.set(1, 0, -3, 0, 1, -4, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix3_test, Transpose) {
+	Matrix3 expected = Matrix3();
+	Matrix3 actual = Matrix3();
+
+	actual.set(1, 2, 3,
+			   4, 5, 6,
+			   7, 8, 9);
+	actual.Transpose();
+
+	expected.set(1, 4, 7,
+				 2, 5, 8, 
+				 3, 6, 9);
+	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix3_test, op_mult) {
+	Matrix3 expected = Matrix3();
+	Matrix3 mult1 = Matrix3();
+	Matrix3 mult2 = Matrix3();
+
+	mult1.set(1, 2, 3, 4, 5, 6, 7, 8, 9);
+	mult2.set(10, 11, 12, 13, 14, 15, 16, 17, 18);
+
+	expected.set(84, 90, 96, 201, 216, 231, 318, 342, 366);
+
+	EXPECT_EQ(expected, mult1 * mult2);
+}
+
+TEST(Matrix3_test, op_mult_vector) {
+	Vector2 expected = Vector2(8, 20);
+	Vector2 mult = Vector2(1, 2);
+	Matrix3 actual = Matrix3();
+
+
+	actual.set(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+	EXPECT_EQ(expected, actual * mult);
+}
+
+//Matrix4 tests
+TEST(Matrix4_test, op_equal) {
+	Matrix4 mx1 = Matrix4();
+	Matrix4 mx2 = Matrix4();
+	mx1.set(1, 2, 3);
+	mx2.set(1, 2, 3);
+	EXPECT_TRUE(mx1 == mx2);
+	mx2.set(1, 1, 2);
+	EXPECT_FALSE(mx1 == mx2);
+}
+
+TEST(Matrix4_test, op_not_equal) {
+	Matrix4 mx1 = Matrix4();
+	Matrix4 mx2 = Matrix4();
+	mx1.set(1, 2, 3);
+	mx2.set(1, 2, 3);
+	EXPECT_FALSE(mx1 != mx2);
+	mx2.set(1, 1, 2);
+	EXPECT_TRUE(mx1 != mx2);
+}
+
+TEST(Matrix4_test, X_Rotation) {
+	Matrix4 expected = Matrix4();
+	Matrix4 actual = Matrix4();
+
+	actual.XRotation(50);
+	expected.set(1, 0, 0, 0, 0, std::cos(-50), -std::sin(-50), 0, 0, std::sin(-50), std::cos(-50), 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.XRotation(-50);
+	expected.set(1, 0, 0, 0, 0, std::cos(50), -std::sin(50), 0, 0, std::sin(50), std::cos(50), 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.XRotation(0);
+	expected.set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix4_test, Y_Rotation) {
+	Matrix4 expected = Matrix4();
+	Matrix4 actual = Matrix4();
+
+	actual.YRotation(50);
+	expected.set(std::cos(-50), 0, std::sin(-50), 0, 0, 1, 0, 0, -std::sin(-50), 0, cos(-50), 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.YRotation(-50);
+	expected.set(std::cos(50), 0, std::sin(50), 0, 0, 1, 0, 0, -std::sin(50), 0, cos(50), 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.YRotation(0);
+	expected.set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix4_test, Z_Rotation) {
+	Matrix4 expected = Matrix4();
+	Matrix4 actual = Matrix4();
+
+	actual.ZRotation(50);
+	expected.set(std::cos(-50), -std::sin(-50), 0, 0, std::sin(-50), std::cos(-50), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.ZRotation(-50);
+	expected.set(std::cos(50), -std::sin(50), 0, 0, std::sin(50), std::cos(50), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.ZRotation(0);
+	expected.set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
 }
 
 int main(int argc, char** argv)

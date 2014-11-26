@@ -41,4 +41,7 @@ private:
 	void reset();
 };
 
+bool operator==(Matrix4 left, Matrix4 right);
+bool operator!=(Matrix4 left, Matrix4 right);
+
 #endif
