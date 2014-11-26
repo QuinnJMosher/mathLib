@@ -203,6 +203,46 @@ TEST(Vector2_test, Lerp_static) {
 	EXPECT_EQ(Vector2(0, 0), Vector2::Lerp(Vector2(-1, -1), Vector2(1, 1), .5));
 }
 
+TEST(Vector2_test, op_add) {
+	EXPECT_EQ(Vector2(4, 6), Vector2(1, 2) + Vector2(3, 4));
+}
+
+TEST(Vector2_test, op_add_eq) {
+	Vector2 vec = Vector2(1, 2);
+	vec += Vector2(3, 4);
+	EXPECT_EQ(Vector2(4, 6), vec);
+}
+
+TEST(Vector2_test, op_sub) {
+	EXPECT_EQ(Vector2(-2, -2), Vector2(1, 2) - Vector2(3, 4));
+}
+
+TEST(Vector2_test, op_sub_eq) {
+	Vector2 vec = Vector2(1, 2);
+	vec -= Vector2(3, 4);
+	EXPECT_EQ(Vector2(-2, -2), vec);
+}
+
+TEST(Vector2_test, op_mult) {
+	EXPECT_EQ(Vector2(3, 8), Vector2(1, 2) * Vector2(3, 4));
+}
+
+TEST(Vector2_test, op_mult_eq) {
+	Vector2 vec = Vector2(1, 2);
+	vec *= Vector2(3, 4);
+	EXPECT_EQ(Vector2(3, 8), vec);
+}
+
+TEST(Vector2_test, op_mult_scalar) {
+	EXPECT_EQ(Vector2(3, 6), Vector2(1, 2) * 3);
+}
+
+TEST(Vector2_test, op_mult_scalar_eq) {
+	Vector2 vec = Vector2(1, 2);
+	vec *= 3;
+	EXPECT_EQ(Vector2(3, 6), vec);
+}
+
 //Vector3 test
 TEST(Vector3_test, op_equal) {
 	EXPECT_TRUE(Vector3(1, 2, 3) == Vector3(1, 2, 3));
@@ -340,6 +380,46 @@ TEST(Vector3_test, Lerp_static) {
 	EXPECT_EQ(Vector3(1, 2, 3), Vector3::Lerp(Vector3(0, 0, 0), Vector3(1, 2, 3), 1));
 }
 
+TEST(Vector3_test, op_add) {
+	EXPECT_EQ(Vector3(5, 7, 9), Vector3(1, 2, 3) + Vector3(4, 5, 6));
+}
+
+TEST(Vector3_test, op_add_eq) {
+	Vector3 vec = Vector3(1, 2, 3);
+	vec += Vector3(4, 5, 6);
+	EXPECT_EQ(Vector3(5, 7, 9), vec);
+}
+
+TEST(Vector3_test, op_sub) {
+	EXPECT_EQ(Vector3(-3, -3, -3), Vector3(1, 2, 3) - Vector3(4, 5, 6));
+}
+
+TEST(Vector3_test, op_sub_eq) {
+	Vector3 vec = Vector3(1, 2, 3);
+	vec -= Vector3(4, 5, 6);
+	EXPECT_EQ(Vector3(-3, -3, -3), vec);
+}
+
+TEST(Vector3_test, op_mult) {
+	EXPECT_EQ(Vector3(4, 10, 18), Vector3(1, 2, 3) * Vector3(4, 5, 6));
+}
+
+TEST(Vector3_test, op_mult_eq) {
+	Vector3 vec = Vector3(1, 2, 3);
+	vec *= Vector3(4, 5, 6);
+	EXPECT_EQ(Vector3(4, 10, 18), vec);
+}
+
+TEST(Vector3_test, op_mult_scalar) {
+	EXPECT_EQ(Vector3(4, 8, 12), Vector3(1, 2, 3) * 4);
+}
+
+TEST(Vector3_test, op_mult_scalar_eq) {
+	Vector3 vec = Vector3(1, 2, 3);
+	vec *= 4;
+	EXPECT_EQ(Vector3(4, 8, 12), vec);
+}
+
 //vector 4 tests
 TEST(Vector4_test, op_equal) {
 	EXPECT_TRUE(Vector4(1, 2, 3, 4) == Vector4(1, 2, 3, 4));
@@ -398,20 +478,20 @@ TEST(Vector4_test, Normalize_static) {
 TEST(Matrix3_test, op_equal) {
 	Matrix3 mx1 = Matrix3();
 	Matrix3 mx2 = Matrix3();
-	mx1.set(1, 2, 3);
-	mx2.set(1, 2, 3);
+	mx1.Set(1, 2, 3);
+	mx2.Set(1, 2, 3);
 	EXPECT_TRUE(mx1 == mx2);
-	mx2.set(1, 1, 2);
+	mx2.Set(1, 1, 2);
 	EXPECT_FALSE(mx1 == mx2);
 }
 
 TEST(Matrix3_test, op_not_equal) {
 	Matrix3 mx1 = Matrix3();
 	Matrix3 mx2 = Matrix3();
-	mx1.set(1, 2, 3);
-	mx2.set(1, 2, 3);
+	mx1.Set(1, 2, 3);
+	mx2.Set(1, 2, 3);
 	EXPECT_FALSE(mx1 != mx2);
-	mx2.set(1, 1, 2);
+	mx2.Set(1, 1, 2);
 	EXPECT_TRUE(mx1 != mx2);
 }
 
@@ -420,15 +500,15 @@ TEST(Matrix3_test, rotation) {
 	Matrix3 actual = Matrix3();
 
 	actual.Rotation(10);
-	expected.set(std::cos(10), -(std::sin(10)), 0, std::sin(10), std::cos(10), 0, 0, 0, 1);
+	expected.Set(std::cos(10), -(std::sin(10)), 0, std::sin(10), std::cos(10), 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.Rotation(-10);
-	expected.set(std::cos(-10), -(std::sin(-10)), 0, std::sin(-10), std::cos(-10), 0, 0, 0, 1);
+	expected.Set(std::cos(-10), -(std::sin(-10)), 0, std::sin(-10), std::cos(-10), 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.Rotation(0);
-	expected.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	expected.Set(1, 0, 0, 0, 1, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 }
 
@@ -437,19 +517,19 @@ TEST(Matrix3_test, Scale) {
 	Matrix3 actual = Matrix3();
 
 	actual.Scale(2,3);
-	expected.set(2, 0, 0, 0, 3, 0, 0, 0, 1);
+	expected.Set(2, 0, 0, 0, 3, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.Scale(0.4f, 0.5f);
-	expected.set(0.4f, 0, 0, 0, 0.5f, 0, 0, 0, 1);
+	expected.Set(0.4f, 0, 0, 0, 0.5f, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.Scale(-2, -3);
-	expected.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	expected.Set(1, 0, 0, 0, 1, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.Scale(0, 0);
-	expected.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	expected.Set(1, 0, 0, 0, 1, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 }
 
@@ -458,15 +538,15 @@ TEST(Matrix3_test, Transform_Vector) {
 	Matrix3 actual = Matrix3();
 
 	actual.TransformVector(1, 2);
-	expected.set(1, 0, 1, 0, 1, 2, 0, 0, 1);
+	expected.Set(1, 0, 1, 0, 1, 2, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.TransformVector(0, 0);
-	expected.set(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	expected.Set(1, 0, 0, 0, 1, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.TransformVector(-3, -4);
-	expected.set(1, 0, -3, 0, 1, -4, 0, 0, 1);
+	expected.Set(1, 0, -3, 0, 1, -4, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 }
 
@@ -474,12 +554,12 @@ TEST(Matrix3_test, Transpose) {
 	Matrix3 expected = Matrix3();
 	Matrix3 actual = Matrix3();
 
-	actual.set(1, 2, 3,
+	actual.Set(1, 2, 3,
 			   4, 5, 6,
 			   7, 8, 9);
 	actual.Transpose();
 
-	expected.set(1, 4, 7,
+	expected.Set(1, 4, 7,
 				 2, 5, 8, 
 				 3, 6, 9);
 	EXPECT_EQ(expected, actual);
@@ -490,12 +570,26 @@ TEST(Matrix3_test, op_mult) {
 	Matrix3 mult1 = Matrix3();
 	Matrix3 mult2 = Matrix3();
 
-	mult1.set(1, 2, 3, 4, 5, 6, 7, 8, 9);
-	mult2.set(10, 11, 12, 13, 14, 15, 16, 17, 18);
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9);
+	mult2.Set(10, 11, 12, 13, 14, 15, 16, 17, 18);
 
-	expected.set(84, 90, 96, 201, 216, 231, 318, 342, 366);
+	expected.Set(84, 90, 96, 201, 216, 231, 318, 342, 366);
 
 	EXPECT_EQ(expected, mult1 * mult2);
+}
+
+TEST(Matrix3_test, op_mult_eq) {
+	Matrix3 expected = Matrix3();
+	Matrix3 mult1 = Matrix3();
+	Matrix3 mult2 = Matrix3();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9);
+	mult2.Set(10, 11, 12, 13, 14, 15, 16, 17, 18);
+
+	expected.Set(84, 90, 96, 201, 216, 231, 318, 342, 366);
+
+	mult1 *= mult2;
+	EXPECT_EQ(expected, mult1);
 }
 
 TEST(Matrix3_test, op_mult_vector) {
@@ -504,29 +598,83 @@ TEST(Matrix3_test, op_mult_vector) {
 	Matrix3 actual = Matrix3();
 
 
-	actual.set(1, 2, 3, 4, 5, 6, 7, 8, 9);
+	actual.Set(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
 	EXPECT_EQ(expected, actual * mult);
+}
+
+TEST(Matrix3_test, op_add) {
+	Matrix3 expected = Matrix3();
+	Matrix3 mult1 = Matrix3();
+	Matrix3 mult2 = Matrix3();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9);
+	mult2.Set(10, 11, 12, 13, 14, 15, 16, 17, 18);
+
+	expected.Set(11, 13, 15, 17, 19, 21, 23, 25, 27);
+
+	EXPECT_EQ(expected, mult1 + mult2);
+}
+
+TEST(Matrix3_test, op_add_eq) {
+	Matrix3 expected = Matrix3();
+	Matrix3 mult1 = Matrix3();
+	Matrix3 mult2 = Matrix3();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9);
+	mult2.Set(10, 11, 12, 13, 14, 15, 16, 17, 18);
+
+	expected.Set(11, 13, 15, 17, 19, 21, 23, 25, 27);
+
+	mult1 += mult2;
+	EXPECT_EQ(expected, mult1);
+}
+
+TEST(Matrix3_test, op_sub) {
+	Matrix3 expected = Matrix3();
+	Matrix3 mult1 = Matrix3();
+	Matrix3 mult2 = Matrix3();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9);
+	mult2.Set(10, 11, 12, 13, 14, 15, 16, 17, 18);
+
+	expected.Set(-9, -9, -9, -9, -9, -9, -9, -9, -9);
+
+	EXPECT_EQ(expected, mult1 - mult2);
+}
+
+TEST(Matrix3_test, op_sub_eq) {
+	Matrix3 expected = Matrix3();
+	Matrix3 mult1 = Matrix3();
+	Matrix3 mult2 = Matrix3();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9);
+	mult2.Set(10, 11, 12, 13, 14, 15, 16, 17, 18);
+
+	expected.Set(-9, -9, -9, -9, -9, -9, -9, -9, -9);
+
+	mult1 -= mult2;
+	EXPECT_EQ(expected, mult1);
 }
 
 //Matrix4 tests
 TEST(Matrix4_test, op_equal) {
 	Matrix4 mx1 = Matrix4();
 	Matrix4 mx2 = Matrix4();
-	mx1.set(1, 2, 3);
-	mx2.set(1, 2, 3);
+	mx1.Set(1, 2, 3);
+	mx2.Set(1, 2, 3);
 	EXPECT_TRUE(mx1 == mx2);
-	mx2.set(1, 1, 2);
+	mx2.Set(1, 1, 2);
 	EXPECT_FALSE(mx1 == mx2);
 }
 
 TEST(Matrix4_test, op_not_equal) {
 	Matrix4 mx1 = Matrix4();
 	Matrix4 mx2 = Matrix4();
-	mx1.set(1, 2, 3);
-	mx2.set(1, 2, 3);
+	mx1.Set(1, 2, 3);
+	mx2.Set(1, 2, 3);
 	EXPECT_FALSE(mx1 != mx2);
-	mx2.set(1, 1, 2);
+	mx2.Set(1, 1, 2);
 	EXPECT_TRUE(mx1 != mx2);
 }
 
@@ -535,15 +683,15 @@ TEST(Matrix4_test, X_Rotation) {
 	Matrix4 actual = Matrix4();
 
 	actual.XRotation(50);
-	expected.set(1, 0, 0, 0, 0, std::cos(-50), -std::sin(-50), 0, 0, std::sin(-50), std::cos(-50), 0, 0, 0, 0, 1);
+	expected.Set(1, 0, 0, 0, 0, std::cos(-50), -std::sin(-50), 0, 0, std::sin(-50), std::cos(-50), 0, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.XRotation(-50);
-	expected.set(1, 0, 0, 0, 0, std::cos(50), -std::sin(50), 0, 0, std::sin(50), std::cos(50), 0, 0, 0, 0, 1);
+	expected.Set(1, 0, 0, 0, 0, std::cos(50), -std::sin(50), 0, 0, std::sin(50), std::cos(50), 0, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.XRotation(0);
-	expected.set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	expected.Set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 }
 
@@ -552,15 +700,15 @@ TEST(Matrix4_test, Y_Rotation) {
 	Matrix4 actual = Matrix4();
 
 	actual.YRotation(50);
-	expected.set(std::cos(-50), 0, std::sin(-50), 0, 0, 1, 0, 0, -std::sin(-50), 0, cos(-50), 0, 0, 0, 0, 1);
+	expected.Set(std::cos(-50), 0, std::sin(-50), 0, 0, 1, 0, 0, -std::sin(-50), 0, cos(-50), 0, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.YRotation(-50);
-	expected.set(std::cos(50), 0, std::sin(50), 0, 0, 1, 0, 0, -std::sin(50), 0, cos(50), 0, 0, 0, 0, 1);
+	expected.Set(std::cos(50), 0, std::sin(50), 0, 0, 1, 0, 0, -std::sin(50), 0, cos(50), 0, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.YRotation(0);
-	expected.set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	expected.Set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 }
 
@@ -569,16 +717,150 @@ TEST(Matrix4_test, Z_Rotation) {
 	Matrix4 actual = Matrix4();
 
 	actual.ZRotation(50);
-	expected.set(std::cos(-50), -std::sin(-50), 0, 0, std::sin(-50), std::cos(-50), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	expected.Set(std::cos(-50), -std::sin(-50), 0, 0, std::sin(-50), std::cos(-50), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.ZRotation(-50);
-	expected.set(std::cos(50), -std::sin(50), 0, 0, std::sin(50), std::cos(50), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	expected.Set(std::cos(50), -std::sin(50), 0, 0, std::sin(50), std::cos(50), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
 
 	actual.ZRotation(0);
-	expected.set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	expected.Set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix4_test, Scale) {
+	Matrix4 expected = Matrix4();
+	Matrix4 actual = Matrix4();
+
+	actual.Scale(1, 2, 3);
+	expected.Set(1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.Scale(0.1f, 0.2f, 0.3f);
+	expected.Set(0.1f, 0, 0, 0, 0, 0.2f, 0, 0, 0, 0, 0.3f, 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.Scale(-1, -2, -3);
+	expected.Set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix4_test, Transform_Vector) {
+	Matrix4 expected = Matrix4();
+	Matrix4 actual = Matrix4();
+
+	actual.TransformVector(1, 2, 3);
+	expected.Set(1, 0, 0, 1, 0, 1, 0, 2, 0, 0, 1, 3, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+
+	actual.TransformVector(-1, -2, -3);
+	expected.Set(1, 0, 0, -1, 0, 1, 0, -2, 0, 0, 1, -3, 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix4_test, Transpose) {
+	Matrix4 expected = Matrix4();
+	Matrix4 actual = Matrix4();
+
+	actual.Set(1, 2, 3, 4,
+			   5, 6, 7, 8,
+			   9, 10, 11, 12,
+			   13, 14, 15, 16);
+	actual.Transpose();
+	expected.Set(1, 5, 9, 13,
+				 2, 6, 10, 14,
+				 3, 7, 11, 15,
+				 4, 8, 12, 16);
+	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix4_test, OrthoProj) {
+	Matrix4 expected = Matrix4();
+	Matrix4 actual = Matrix4();
+
+	actual.OrthoProj(1, 2, 3, 4, 5, 6);
+	expected.Set(2 / (-1), 0, 0, -((7) / (-1)), 0, 2 / (-1), 0, -((3) / (-1)), 0, 0, -2 / (-1), ((11) / (-1)), 0, 0, 0, 1);
+	EXPECT_EQ(expected, actual);
+}
+
+TEST(Matrix4_test, op_mult) {
+	Matrix4 expected = Matrix4();
+	Matrix4 mult1 = Matrix4();
+	Matrix4 mult2 = Matrix4();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+	mult2.Set(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
+	expected.Set(250, 260, 270, 280, 618, 644, 670, 696, 986, 1028, 1070, 1112, 1354, 1412, 1470, 1528);
+	EXPECT_EQ(expected, mult1 * mult2);
+}
+
+TEST(Matrix4_test, op_mult_eq) {
+	Matrix4 expected = Matrix4();
+	Matrix4 mult1 = Matrix4();
+	Matrix4 mult2 = Matrix4();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+	mult2.Set(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
+	expected.Set(250, 260, 270, 280, 618, 644, 670, 696, 986, 1028, 1070, 1112, 1354, 1412, 1470, 1528);
+	mult1 *= mult2;
+	EXPECT_EQ(expected, mult1);
+}
+
+TEST(Matrix4_test, op_mult_vector) {
+	Vector3 expected = Vector3(18, 46, 74);
+	Matrix4 mult1 = Matrix4();
+	Vector3 mult2 = Vector3(1, 2, 3);
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+	
+	EXPECT_EQ(expected, mult1 * mult2);
+}
+
+TEST(Matrix4_test, op_add) {
+	Matrix4 expected = Matrix4();
+	Matrix4 mult1 = Matrix4();
+	Matrix4 mult2 = Matrix4();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+	mult2.Set(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
+	expected.Set(18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48);
+	EXPECT_EQ(expected, mult1 + mult2);
+}
+
+TEST(Matrix4_test, op_add_eq) {
+	Matrix4 expected = Matrix4();
+	Matrix4 mult1 = Matrix4();
+	Matrix4 mult2 = Matrix4();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+	mult2.Set(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
+	expected.Set(18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48);
+	mult1 += mult2;
+	EXPECT_EQ(expected, mult1);
+}
+
+TEST(Matrix4_test, op_sub) {
+	Matrix4 expected = Matrix4();
+	Matrix4 mult1 = Matrix4();
+	Matrix4 mult2 = Matrix4();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+	mult2.Set(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
+	expected.Set(-16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16);
+	EXPECT_EQ(expected, mult1 - mult2);
+}
+
+TEST(Matrix4_test, op_sub_eq) {
+	Matrix4 expected = Matrix4();
+	Matrix4 mult1 = Matrix4();
+	Matrix4 mult2 = Matrix4();
+
+	mult1.Set(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+	mult2.Set(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
+	expected.Set(-16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16, -16);
+	mult1 -= mult2;
+	EXPECT_EQ(expected, mult1);
 }
 
 int main(int argc, char** argv)

@@ -14,8 +14,8 @@ public:
 	Matrix3 TransformVector(float in_xTransform, float in_yTransform);
 	Matrix3 Transpose();
 
-	void set(int in_col, int in_row, float in_value);
-	void set(float in_00, float in_01, float in_02, float in_10, float in_11, float in_12, float in_20, float in_21, float in_22);
+	void Set(int in_col, int in_row, float in_value);
+	void Set(float in_00, float in_01, float in_02, float in_10, float in_11, float in_12, float in_20, float in_21, float in_22);
 
 	Matrix3 operator+(Matrix3 other);
 	Matrix3 operator-(Matrix3 other);

@@ -62,9 +62,15 @@ Matrix4 Matrix4::ZRotation(float in_degrees) {
 Matrix4 Matrix4::Scale(float in_xScale, float in_yScale, float in_zScale) {
 	this->reset();
 
-	matrix[0][0] = in_xScale;
-	matrix[1][1] = in_yScale;
-	matrix[2][2] = in_zScale;
+	if (in_xScale > 0) {
+		matrix[0][0] = in_xScale;
+	}
+	if (in_yScale > 0) {
+		matrix[1][1] = in_yScale;
+	}
+	if (in_zScale > 0) {
+		matrix[2][2] = in_zScale;
+	}
 
 	return *this;
 }
@@ -122,31 +128,6 @@ Matrix4 Matrix4::OrthoProj(float in_top, float in_bottom, float in_right, float 
 	return (*this);
 }
 
-Matrix4 Matrix4::OrthoProj(float in_top, float in_bottom, float in_right, float in_left, float in_far, float in_near, Matrix4* target) {
-	
-	(*target).matrix[0][0] = 2 / (in_right - in_left);
-	(*target).matrix[0][1] = 0;
-	(*target).matrix[0][2] = 0;
-	(*target).matrix[0][3] = -1 * ((in_right + in_left) / (in_right - in_left));
-
-	(*target).matrix[1][0] = 0;
-	(*target).matrix[1][1] = 2 / (in_top - in_bottom);
-	(*target).matrix[1][2] = 0;
-	(*target).matrix[1][3] = -1 * ((in_top + in_bottom) / (in_top - in_bottom));
-
-	(*target).matrix[2][0] = 0;
-	(*target).matrix[2][1] = 0;
-	(*target).matrix[2][2] = -2 / (in_far - in_near);
-	(*target).matrix[2][3] = ((in_far + in_near) / (in_far - in_near));
-
-	(*target).matrix[3][0] = 0;
-	(*target).matrix[3][1] = 0;
-	(*target).matrix[3][2] = 0;
-	(*target).matrix[3][3] = 1;
-
-	return (*target);
-}
-
 Matrix4 Matrix4::operator+(Matrix4 other) {
 	Matrix4 temp = Matrix4();
 
@@ -170,6 +151,7 @@ Matrix4 Matrix4::operator-(Matrix4 other) {
 
 	return temp;
 }
+
 Matrix4 Matrix4::operator+=(Matrix4 other) {
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++) {
@@ -236,13 +218,13 @@ Vector3 Matrix4::operator*(Vector3 other) {
 	return out;
 }
 
-void Matrix4::set(int in_col, int in_row, float in_value) {
+void Matrix4::Set(int in_col, int in_row, float in_value) {
 	if (in_col < 4 && in_row < 4) {
 		matrix[in_col][in_row] = in_value;
 	}
 }
 
-void Matrix4::set(float in_00, float in_01, float in_02, float in_03, float in_10, float in_11, float in_12, float in_13, float in_20, float in_21, float in_22, float in_23, float in_30, float in_31, float in_32, float in_33) {
+void Matrix4::Set(float in_00, float in_01, float in_02, float in_03, float in_10, float in_11, float in_12, float in_13, float in_20, float in_21, float in_22, float in_23, float in_30, float in_31, float in_32, float in_33) {
 	matrix[0][0] = in_00;
 	matrix[0][1] = in_01;
 	matrix[0][2] = in_02;
