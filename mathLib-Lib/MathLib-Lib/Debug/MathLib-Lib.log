@@ -1,0 +1,30 @@
+﻿Build started 12/1/2014 2:48:52 PM.
+     1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Lib\MathLib-Lib\MathLib-Lib.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\General.cpp source\Matrix3.cpp source\Matrix4.cpp source\Vector2.cpp source\Vector3.cpp source\Vector4.cpp
+         Vector4.cpp
+         Vector3.cpp
+         Vector2.cpp
+         Matrix4.cpp
+         Matrix3.cpp
+         General.cpp
+     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-lib\mathlib-lib\source\general.cpp(17): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-lib\mathlib-lib\source\general.cpp(20): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-lib\mathlib-lib\source\general.cpp(34): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-lib\mathlib-lib\source\general.cpp(35): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-lib\mathlib-lib\source\general.cpp(38): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-lib\mathlib-lib\source\general.cpp(40): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Lib\Debug\MathLib-Lib.lib" /NOLOGO Debug\General.obj
+         Debug\Matrix3.obj
+         Debug\Matrix4.obj
+         Debug\Vector2.obj
+         Debug\Vector3.obj
+         Debug\Vector4.obj
+         MathLib-Lib.vcxproj -> C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Lib\Debug\MathLib-Lib.lib
+     1>Done Building Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Lib\MathLib-Lib\MathLib-Lib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.70

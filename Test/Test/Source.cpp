@@ -2,12 +2,12 @@
 #include <iostream>
 #include "gtest/gtest.h"
 #include "QuinnMathLibAll.h"
-#include "General.cpp"
-#include "Vector2.cpp";
-#include "Vector3.cpp";
-#include "Vector4.cpp";
-#include "Matrix3.cpp";
-#include "Matrix4.cpp";
+//#include "General.cpp"
+//#include "Vector2.cpp";
+//#include "Vector3.cpp";
+//#include "Vector4.cpp";
+//#include "Matrix3.cpp";
+//#include "Matrix4.cpp";
 
 //General class test
 TEST(General_Functions_test, To_Degrees)

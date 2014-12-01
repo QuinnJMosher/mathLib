@@ -1,0 +1,15 @@
+﻿Build started 12/1/2014 8:57:27 AM.
+     1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\mathLib\mathLib.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\Release\mathLib.lib" /NOLOGO /LTCG Release\General.obj
+         Release\Matrix3.obj
+         Release\Matrix4.obj
+         Release\Vector2.obj
+         Release\Vector3.obj
+         Release\Vector4.obj
+         mathLib.vcxproj -> C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\Release\mathLib.lib
+     1>Done Building Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib\mathLib\mathLib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.24
