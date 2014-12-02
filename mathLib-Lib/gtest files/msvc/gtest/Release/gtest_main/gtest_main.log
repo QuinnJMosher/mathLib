@@ -1,4 +1,4 @@
-﻿Build started 12/1/2014 3:46:03 PM.
+﻿Build started 12/2/2014 8:56:50 AM.
      1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Lib\gtest files\msvc\gtest_main.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.. /I..\include /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _LIB /D _MBCS /Gm- /EHsc /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"gtest/Release\gtest_main\\" /Fd"gtest/Release\gtest_main\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\gtest_main.cc
@@ -10,4 +10,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.65
+Time Elapsed 00:00:00.59
