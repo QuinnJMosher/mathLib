@@ -9,7 +9,7 @@
 #ifndef _General_h_
 #define _General_h_
 
-DLLEXPORT class General{
+class DLLEXPORT General{
 public:
 	static float Lerp(float in_begin, float in_end, float in_percent);
 

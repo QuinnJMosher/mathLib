@@ -10,7 +10,7 @@
 #include <cmath>
 #include <iostream>
 
-DLLEXPORT class Vector2{
+class DLLEXPORT Vector2{
 
 public:
 	float x;

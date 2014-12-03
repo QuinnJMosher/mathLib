@@ -10,7 +10,7 @@
 #ifndef _Matrix4_h_
 #define _Matrix4_h_
 
-DLLEXPORT class Matrix4{
+class DLLEXPORT Matrix4{
 public:
 	Matrix4();
 	~Matrix4();

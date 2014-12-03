@@ -10,7 +10,7 @@
 #ifndef _Vector4_h_
 #define _Vector4_h_
 
-DLLEXPORT class Vector4 {
+class DLLEXPORT Vector4 {
 public:
 	float w;
 	float x;

@@ -39,7 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>($ProjectDir)include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\include;$(IncludePath)</IncludePath>
+    <SourcePath>$(ProjectDir)source;$(VC_SourcePath);</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -75,13 +76,6 @@
     <ClInclude Include="include\Vector2.h" />
     <ClInclude Include="include\Vector3.h" />
     <ClInclude Include="include\Vector4.h" />
-    <ClInclude Include="source\General.h" />
-    <ClInclude Include="source\Matrix3.h" />
-    <ClInclude Include="source\Matrix4.h" />
-    <ClInclude Include="source\QuinnMathLibAll.h" />
-    <ClInclude Include="source\Vector2.h" />
-    <ClInclude Include="source\Vector3.h" />
-    <ClInclude Include="source\Vector4.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\General.cpp" />
