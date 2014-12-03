@@ -1,12 +1,18 @@
-﻿Build started 12/2/2014 5:53:30 PM.
+﻿Build started 12/3/2014 9:30:21 AM.
      1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\QuinqTest\QuinqTest.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\\Quinq\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(38): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(84): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(167): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(201): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(216): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::General' when no variable is declared
+       Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\QuinqTest.exe" /INCREMENTAL /NOLOGO Quinq.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\QuinqTest.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\QuinqTest.lib" /MACHINE:X86 Debug\main.obj
-     1>main.obj : error LNK2019: unresolved external symbol "public: __thiscall Vector2::Vector2(void)" (??0Vector2@@QAE@XZ) referenced in function _main
-     1>main.obj : error LNK2019: unresolved external symbol "public: __thiscall Vector2::Vector2(float,float)" (??0Vector2@@QAE@MM@Z) referenced in function _main
-     1>C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\QuinqTest.exe : fatal error LNK1120: 2 unresolved externals
-     1>Done Building Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\QuinqTest\QuinqTest.vcxproj" (Build target(s)) -- FAILED.
+         QuinqTest.vcxproj -> C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\QuinqTest.exe
+     1>Done Building Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\QuinqTest\QuinqTest.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.14
+Time Elapsed 00:00:00.58

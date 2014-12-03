@@ -1,13 +1,114 @@
-﻿Build started 12/2/2014 5:53:29 PM.
+﻿Build started 12/3/2014 9:30:19 AM.
      1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Quinq\Quinq.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\Vector2.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\General.cpp source\Matrix3.cpp source\Matrix4.cpp source\Vector2.cpp source\Vector3.cpp source\Vector4.cpp
+         General.cpp
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(38): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(84): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(167): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(201): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(216): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::General' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\general.cpp(21): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\general.cpp(24): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\general.cpp(40): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\general.cpp(41): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\general.cpp(44): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\general.cpp(47): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+         Generating Code...
+         Compiling...
+         Vector4.cpp
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(38): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(84): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(167): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(201): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(216): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::General' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector4.cpp(74): warning C4273: 'qlib::operator ==' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(41) : see previous definition of '=='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector4.cpp(88): warning C4273: 'qlib::operator !=' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(42) : see previous definition of '!='
+         Vector3.cpp
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(38): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(84): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(167): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(201): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(216): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::General' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector3.cpp(153): warning C4273: 'qlib::operator ==' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(86) : see previous definition of '=='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector3.cpp(165): warning C4273: 'qlib::operator !=' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(87) : see previous definition of '!='
          Vector2.cpp
-     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\vector2.h(52): warning C4091: '__declspec(dllimport)' : ignored on left of 'Vector2' when no variable is declared
-     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(134): warning C4273: 'operator ==' : inconsistent dll linkage
-                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\vector2.h(54) : see previous definition of '=='
-     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(143): warning C4273: 'operator !=' : inconsistent dll linkage
-                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\vector2.h(55) : see previous definition of '!='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(38): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(84): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(167): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(201): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(216): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::General' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(5): warning C4273: 'qlib::Vector2::Vector2' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(95) : see previous definition of '{ctor}'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(10): warning C4273: 'qlib::Vector2::Vector2' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(96) : see previous definition of '{ctor}'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(15): warning C4273: 'qlib::Vector2::DotProduct' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(98) : see previous definition of 'DotProduct'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(19): warning C4273: 'qlib::Vector2::DotProduct' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(99) : see previous definition of 'DotProduct'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(23): warning C4273: 'qlib::Vector2::CrossProduct' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(101) : see previous definition of 'CrossProduct'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(27): warning C4273: 'qlib::Vector2::CrossProduct' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(102) : see previous definition of 'CrossProduct'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(31): warning C4273: 'qlib::Vector2::Magnitude' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(104) : see previous definition of 'Magnitude'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(35): warning C4273: 'qlib::Vector2::Magnitude' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(105) : see previous definition of 'Magnitude'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(39): warning C4273: 'qlib::Vector2::Normalize' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(107) : see previous definition of 'Normalize'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(51): warning C4273: 'qlib::Vector2::Normalize' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(108) : see previous definition of 'Normalize'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(61): warning C4273: 'qlib::Vector2::NormalizeThis' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(110) : see previous definition of 'NormalizeThis'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(76): warning C4273: 'qlib::Vector2::Lerp' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(112) : see previous definition of 'Lerp'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(88): warning C4273: 'qlib::Vector2::Lerp' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(113) : see previous definition of 'Lerp'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(100): warning C4273: 'qlib::Vector2::operator +' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(115) : see previous definition of '+'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(104): warning C4273: 'qlib::Vector2::operator -' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(116) : see previous definition of '-'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(108): warning C4273: 'qlib::Vector2::operator *' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(117) : see previous definition of '*'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(112): warning C4273: 'qlib::Vector2::operator *' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(118) : see previous definition of '*'
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(116): warning C4273: 'qlib::Vector2::operator +=' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(120) : see previous definition of '+='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(121): warning C4273: 'qlib::Vector2::operator -=' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(121) : see previous definition of '-='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(126): warning C4273: 'qlib::Vector2::operator *=' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(122) : see previous definition of '*='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(131): warning C4273: 'qlib::Vector2::operator *=' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(123) : see previous definition of '*='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(136): warning C4273: 'qlib::operator ==' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(130) : see previous definition of '=='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(145): warning C4273: 'qlib::operator !=' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(131) : see previous definition of '!='
+         Matrix4.cpp
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(38): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(84): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(167): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(201): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(216): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::General' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\matrix4.cpp(251): warning C4273: 'qlib::operator ==' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(169) : see previous definition of '=='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\matrix4.cpp(263): warning C4273: 'qlib::operator !=' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(170) : see previous definition of '!='
+         Matrix3.cpp
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(38): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(84): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Vector3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(167): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix4' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(201): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::Matrix3' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(216): warning C4091: '__declspec(dllimport)' : ignored on left of 'qlib::General' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\matrix3.cpp(182): warning C4273: 'qlib::operator ==' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(203) : see previous definition of '=='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\matrix3.cpp(194): warning C4273: 'qlib::operator !=' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\quinnlib.h(204) : see previous definition of '!='
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\Quinq.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\Quinq.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\Quinq.lib" /MACHINE:X86 /DLL Debug\General.obj
          Debug\Matrix3.obj
@@ -15,9 +116,11 @@
          Debug\Vector2.obj
          Debug\Vector3.obj
          Debug\Vector4.obj
+            Creating library C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\Quinq.lib and object C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\Quinq.exp
+     1>Matrix3.obj : warning LNK4217: locally defined symbol ??0Vector2@qlib@@QAE@XZ (public: __thiscall qlib::Vector2::Vector2(void)) imported in function "public: class qlib::Vector2 __thiscall qlib::Matrix3::operator*(class qlib::Vector2)" (??DMatrix3@qlib@@QAE?AVVector2@1@V21@@Z)
          Quinq.vcxproj -> C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\Quinq.dll
      1>Done Building Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Quinq\Quinq.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.62
+Time Elapsed 00:00:02.17

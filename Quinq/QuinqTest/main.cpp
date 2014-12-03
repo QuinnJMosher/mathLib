@@ -1,5 +1,6 @@
 #include <iostream>
-#include <Vector2.h>
+#include <Quinnlib.h>
+using namespace qlib;
 
 void main() {
 	Vector2 vec2;
