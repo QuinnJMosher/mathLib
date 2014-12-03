@@ -31,7 +31,7 @@ public:
 	static Vector4 Normalize(Vector4 input);
 
 	//overloads << operator
-	friend std::ostream& operator<<(std::ostream& os, const Vector4& vec);
+	DLLEXPORT friend std::ostream& operator<<(std::ostream& os, const Vector4& vec);
 };
 
 

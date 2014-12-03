@@ -86,7 +86,7 @@ bool operator!=(Vector4 left, Vector4 right) {
 	return !(left == right);
 }
 
-std::ostream& operator<<(std::ostream& os, const Vector4& vec) {
+DLLEXPORT std::ostream& operator<<(std::ostream& os, const Vector4& vec) {
 	os << "(" << vec.w << ", "<< vec.x << ", " << vec.y << ", " << vec.z << ")";
 	return os;
 }

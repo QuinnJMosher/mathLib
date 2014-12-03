@@ -192,7 +192,7 @@ bool operator!=(Matrix3 right, Matrix3 left) {
 	return !(right == left);
 }
 
-std::ostream& operator<<(std::ostream& os, const Matrix3& mx3) {
+DLLEXPORT std::ostream& operator<<(std::ostream& os, const Matrix3& mx3) {
 	os << "[[" << mx3.matrix[0][0] << ", " << mx3.matrix[0][1] << ", " << mx3.matrix[0][2] << "]\n";
 	os << " [" << mx3.matrix[1][0] << ", " << mx3.matrix[1][1] << ", " << mx3.matrix[1][2] << "]\n";
 	os << " [" << mx3.matrix[2][0] << ", " << mx3.matrix[2][1] << ", " << mx3.matrix[2][2] << "]]\n";

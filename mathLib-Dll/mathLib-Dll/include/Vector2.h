@@ -47,7 +47,7 @@ public:
 	void operator*=(float input);
 
 	//overloads << operator
-	friend std::ostream& operator<<(std::ostream& os, const Vector2& vec);
+	DLLEXPORT friend std::ostream& operator<<(std::ostream& os, const Vector2& vec);
 
 };
 

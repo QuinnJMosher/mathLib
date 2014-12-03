@@ -33,7 +33,7 @@ public:
 
 	Vector2 operator*(Vector2 other);
 
-	friend std::ostream& operator<<(std::ostream& os, const Matrix3& mx3);
+	DLLEXPORT friend std::ostream& operator<<(std::ostream& os, const Matrix3& mx3);
 
 	float matrix[3][3];
 
