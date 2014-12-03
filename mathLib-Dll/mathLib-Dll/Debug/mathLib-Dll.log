@@ -1,11 +1,7 @@
-﻿Build started 12/2/2014 4:03:08 PM.
+﻿Build started 12/2/2014 5:40:22 PM.
      1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Dll\mathLib-Dll\mathLib-Dll.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _WINDLL /D _MBCS /D DLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\General.cpp source\Matrix3.cpp source\Matrix4.cpp source\Vector2.cpp source\Vector3.cpp source\Vector4.cpp
-         Vector4.cpp
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\vector4.h(35): warning C4091: '__declspec(dllexport)' : ignored on left of 'Vector4' when no variable is declared
-         Vector3.cpp
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\vector3.h(53): warning C4091: '__declspec(dllexport)' : ignored on left of 'Vector3' when no variable is declared
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _WINDLL /D _MBCS /D DLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\Matrix3.cpp source\Matrix4.cpp source\Vector2.cpp
          Vector2.cpp
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\vector2.h(52): warning C4091: '__declspec(dllexport)' : ignored on left of 'Vector2' when no variable is declared
          Matrix4.cpp
@@ -14,14 +10,6 @@
          Matrix3.cpp
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\vector2.h(52): warning C4091: '__declspec(dllexport)' : ignored on left of 'Vector2' when no variable is declared
      1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\matrix3.h(42): warning C4091: '__declspec(dllexport)' : ignored on left of 'Matrix3' when no variable is declared
-         General.cpp
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\general.h(22): warning C4091: '__declspec(dllexport)' : ignored on left of 'General' when no variable is declared
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\general.cpp(17): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\general.cpp(20): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\general.cpp(34): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\general.cpp(35): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\general.cpp(38): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\quinn.mosher\documents\github\mathlib\mathlib-dll\mathlib-dll\source\general.cpp(40): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
          Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Dll\Debug\mathLib-Dll.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Dll\Debug\mathLib-Dll.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Dll\Debug\mathLib-Dll.lib" /MACHINE:X86 /DLL Debug\General.obj
@@ -36,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.13
+Time Elapsed 00:00:01.21

@@ -1,0 +1,23 @@
+﻿Build started 12/2/2014 5:53:29 PM.
+     1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Quinq\Quinq.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\Vector2.cpp
+         Vector2.cpp
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\vector2.h(52): warning C4091: '__declspec(dllimport)' : ignored on left of 'Vector2' when no variable is declared
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(134): warning C4273: 'operator ==' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\vector2.h(54) : see previous definition of '=='
+     1>c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\source\vector2.cpp(143): warning C4273: 'operator !=' : inconsistent dll linkage
+                 c:\users\quinn.mosher\documents\github\mathlib\quinq\quinq\include\vector2.h(55) : see previous definition of '!='
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\Quinq.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\Quinq.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\Quinq.lib" /MACHINE:X86 /DLL Debug\General.obj
+         Debug\Matrix3.obj
+         Debug\Matrix4.obj
+         Debug\Vector2.obj
+         Debug\Vector3.obj
+         Debug\Vector4.obj
+         Quinq.vcxproj -> C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Debug\Quinq.dll
+     1>Done Building Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\Quinq\Quinq\Quinq.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.62

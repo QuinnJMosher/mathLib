@@ -1,0 +1,11 @@
+﻿Build started 12/2/2014 4:28:28 PM.
+     1>Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Dll\TestDll\TestDll.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt TestDll.cpp
+         TestDll.cpp
+     1>TestDll.cpp(1): fatal error C1083: Cannot open include file: 'QuinnMathLibAll.h': No such file or directory
+     1>Done Building Project "C:\Users\quinn.mosher\Documents\GitHub\mathLib\mathLib-Dll\TestDll\TestDll.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.10
