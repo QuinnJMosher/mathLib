@@ -43,9 +43,8 @@ Temporary Items
 .apdisk
 
 #Ignore compiled code
-#**/[Dd]ebug/
-#**/[Rr]ealease/
-/mathLib-Lib/MathLib-Lib/Debug
+**/[Dd]ebug/
+**/[Rr]ealease/
 !**/gtest files/**/[Dd]ebug/
 !**/gtest files/**/[Rr]ealease/
 
