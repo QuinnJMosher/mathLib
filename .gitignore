@@ -43,8 +43,8 @@ Temporary Items
 .apdisk
 
 #Ignore compiled code
-**/[Dd]ebug/
-**/[Rr]ealease/
+/**/[Dd]ebug/
+/**/[Rr]ealease/
 !**/gtest files/**/[Dd]ebug/
 !**/gtest files/**/[Rr]ealease/
 
